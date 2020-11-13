@@ -1,0 +1,252 @@
+@import 'ress';
+@import 'grid';
+@import 'slider-controls';
+
+@keyframes slide-up {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 65vh;
+  min-height: 550px;
+  max-height: 630px;
+  padding-top: 80px;
+  padding-bottom: 0;
+
+  &__content {
+    max-width: 500px;
+  }
+}
+
+.title-emoji {
+  font-size: 50px;
+}
+
+
+.profile-card {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  padding: 30px;
+  border-radius: 20px;
+
+  &__avatar {
+    width: 125px;
+    height: 125px;
+    margin-bottom: 10px;
+    border: 5px solid  rgba(255, 255, 255, 0.808);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 20px rgba(0,0,0,.05);
+    object-fit: cover;
+    object-position: top;
+    // filter: grayscale(1);
+  }
+
+  &__job-desc {
+    position: relative;
+    margin-top: -25px;
+    padding: 7px 10px;
+    font-size: 12px;
+    background: linear-gradient(to bottom right, blue, purple);
+    color: white;
+    border-radius: 40px;
+  }
+
+  &__name {
+    line-height: 1.2;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__loc {
+    margin-top: 10px;
+    font-size: 12px;
+    color: grey;
+  }
+
+  &__skill {
+    position: absolute;
+    right: 110%;
+    display: flex;
+    width: 95px;
+    padding: 10px;
+    background-color: inherit;
+    border-radius: 8px;
+    box-shadow: inherit;
+  
+    img {
+      margin-right: 10px;
+    }
+  
+    &--css {
+      right: auto;
+      left: 105%;
+      top: 150px;
+    }
+  
+    &--text {
+      top: 120px;
+      right: 90%;
+      width: 145px;
+    }
+  }
+}
+
+.service-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 14px;
+  color: grey;
+  background-color: inherit;
+  border-radius: 8px;
+  box-shadow: inherit;
+
+  img {
+    margin-right: 10px;
+  }
+}
+
+.app {
+  position: absolute;
+}
+
+.skills-wrapper {
+  position: relative;
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+.skill-card {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  // margin-right: 20px;
+  // margin-bottom: 20px;
+  width: 135px;
+  height: 135px;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__logo-wrap {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: transform .3s;
+
+    // circle
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ff000038;
+      border-radius: 50%;
+      // transform: scale(0);
+      transition: transform .4s cubic-bezier(1, 0, 0, 2);
+    }
+
+    // line
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      width: 25px;
+      height: 1px;
+      background-color: grey;
+      transition: transform .3s, background-color .3s;
+    }
+
+    // circle colors
+    &--html::before {
+      background-color: rgba(241, 101, 41, 0.2);
+    }
+
+    &--css::before {
+      background-color: rgba(38, 77, 228, 0.2);
+    }
+
+    &--js::before {
+      background-color: rgba(200, 186, 73, 0.2);
+    }
+
+    &--scss::before {
+      background-color: rgba(205, 103, 153, 0.2);
+    }
+
+    &--vue::before {
+      background-color: rgba(65, 184, 131, 0.2);
+    }
+
+    &--tailwind::before {
+      background-color: rgba(29, 169, 187, 0.2);
+    }
+
+    &--git::before {
+      background-color: rgba(240, 81, 51, 0.2);
+    }
+
+    &--grunt::before {
+      background-color: rgba(251, 169, 25, 0.2);
+    }
+  }
+
+  // tech logo
+  img {
+    position: relative;
+    height: 50%;
+    transition: transform .3s;
+  }
+
+  h3 {
+    position: relative;
+    margin-top: 20px;
+    z-index: 1;
+    transition: transform .3s;
+  }
+
+  // hover
+  &:hover &__logo-wrap::before { transform: scale(3.2); }
+}
+
+
+.skills-wrapper {
+
+  &::before {
+    position: absolute;
+  }
+}
