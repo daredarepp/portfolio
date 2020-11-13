@@ -1,16 +1,24 @@
 window.addEventListener("load", function loadHandler() {
-  // Toggle dark theme
-  let btn = document.querySelector("button");
-  btn.addEventListener("click", () => {
-    document.documentElement.hasAttribute("theme")
-      ? document.documentElement.removeAttribute("theme")
-      : document.documentElement.setAttribute("theme", "dark");
-  });
+  let theme = '';
+
+  // Pick theme
+  let themePicker = document.querySelector('.js-theme-picker');
+  themePicker.addEventListener('change', (ev) => {
+    console.log('theme picker change, event: ', ev.target.value);
+    let theme = ev.target.value;
+    document.documentElement.setAttribute('theme', theme);
+  })
+
+
+  const mqDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  /* mqDarkTheme.onchange = () => {
+    mqDarkTheme.matches ? theme = 
+  } */
 
   // Activate slider
   const slider = new KeenSlider("#slider", {
-    slidesPerView: 6,
-    loop: true,
+    slidesPerView: 2,
+    // loop: true,
     spacing: 20,
     // centered: true,
     created: function (instance) {

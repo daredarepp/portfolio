@@ -15,7 +15,16 @@
     <div class="container d-flex align-items-center justify-content-between">
       <a href="" class="logo">Domain.com</a>
 
-      <button class="toggle-btn">dark</button>
+      <fieldset class="js-theme-picker">  
+        <legend>Theme</legend>
+        <input type="radio" id="theme-light" name="theme" value="light" checked>
+        <label for="theme-light">light</label>
+        <input type="radio" id="theme-dark" name="theme" value="dark">
+        <label for="theme-dark">dark</label>
+        <input type="radio" id="theme-auto" name="theme" value="auto">
+        <label for="theme-auto">auto</label>
+        <!-- “Notify by email, grouping, on radio button, checked, one of two”. -->
+      </fieldset>  
     </div>
   </header>
 
@@ -78,9 +87,34 @@
 
     <!-- Skills -->
     <section class="p-relative">
-      <div class="container">
-        <h2>Technologies</h2>
-        <p>The technologies i have experience with.<br></p>
+      <div class="container d-flex">
+        <div>
+          <h2>Technologies</h2>
+
+          <p>These are the technologies i most commonly use.<br></p>
+
+          <!-- slider controls -->
+          <svg
+            id="arrow-left"
+            class="arrow arrow--left"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+            ></path>
+          </svg>
+          <svg
+            id="arrow-right"
+            class="arrow arrow--right"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
+          </svg>
+
+          <div id="dots" class="dots"></div>
+        </div>
 
         <div id="slider" class="skills-wrapper keen-slider">
           <div class="skill-card keen-slider__slide">
@@ -139,27 +173,6 @@
             <h3>grunt</h3>
           </div>
         </div>
-
-        <!-- slider controls -->
-        <svg
-          id="arrow-left"
-          class="arrow arrow--left"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
-          ></path>
-        </svg>
-        <svg
-          id="arrow-right"
-          class="arrow arrow--right"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
-        </svg>
-        <div id="dots" class="dots"></div>
       </div>
     </section>
   </main>

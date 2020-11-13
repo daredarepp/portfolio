@@ -2623,7 +2623,6 @@ html {
 .dots {
   display: flex;
   padding: 10px 0;
-  justify-content: center;
 }
 
 .dot {
@@ -2646,12 +2645,9 @@ html {
 }
 
 .arrow {
-  display: none;
   width: 30px;
   height: 30px;
   top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
   fill: #fff;
   cursor: pointer;
 }
@@ -2789,8 +2785,9 @@ html {
 
 .skills-wrapper {
   position: relative;
-  margin-top: 30px;
-  padding-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  padding: 30px;
 }
 
 .skill-card {
@@ -2801,7 +2798,7 @@ html {
   align-items: center;
   vertical-align: middle;
   width: 135px;
-  height: 135px;
+  height: 170px;
   padding: 15px 25px;
   text-transform: uppercase;
   border-radius: 20px;
@@ -2876,8 +2873,9 @@ html {
   transform: scale(3.2);
 }
 
-.skills-wrapper::before {
-  position: absolute;
+.big-card {
+  background-color: white;
+  padding: 20px 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

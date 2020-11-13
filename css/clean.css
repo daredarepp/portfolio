@@ -114,15 +114,6 @@ p:last-child { margin-top: 0; }
   border-radius: var(--radius);
 }
 
-.toggle-btn {
-  padding: 8px 15px;
-  font-size: 16px;
-  color: white;
-  background-color: var(--c-dark-3);
-  border: none;
-  border-radius: var(--radius);
-}
-
 .skill-card,
 .profile-card {
   background-color: var(--card-bg);

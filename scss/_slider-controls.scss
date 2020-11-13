@@ -1,7 +1,6 @@
 .dots {
   display: flex;
   padding: 10px 0;
-  justify-content: center;
 }
 
 .dot {
@@ -24,13 +23,12 @@
 }
 
 .arrow {
-  display: none;
   width: 30px;
   height: 30px;
   // position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+  // transform: translateY(-50%);
+  // -webkit-transform: translateY(-50%);
   fill: #fff;
   cursor: pointer;
 }

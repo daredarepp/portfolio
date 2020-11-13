@@ -136,8 +136,9 @@
 
 .skills-wrapper {
   position: relative;
-  margin-top: 30px;
-  padding-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  padding: 30px;
 }
 
 .skill-card {
@@ -150,7 +151,7 @@
   // margin-right: 20px;
   // margin-bottom: 20px;
   width: 135px;
-  height: 135px;
+  height: 170px;
   padding: 15px 25px;
   text-transform: uppercase;
   border-radius: 20px;
@@ -243,10 +244,7 @@
   &:hover &__logo-wrap::before { transform: scale(3.2); }
 }
 
-
-.skills-wrapper {
-
-  &::before {
-    position: absolute;
-  }
+.big-card {
+  background-color: white;
+  padding: 20px 30px;
 }
