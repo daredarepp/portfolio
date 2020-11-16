@@ -17,7 +17,7 @@ window.addEventListener("load", function loadHandler() {
 
   // Activate slider
   const slider = new KeenSlider("#slider", {
-    slidesPerView: 2,
+    slidesPerView: 3,
     // loop: true,
     spacing: 20,
     // centered: true,
