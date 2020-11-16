@@ -317,32 +317,29 @@ progress {
   --prim: blue;
   --sec: purple;
   --light: white;
-  /* --light-3: rgba(255,255,255,.65); */
-  --light-3: rgb(246,246,246);
-  --dark: #020219;
-  /* --dark-2: rgba(50, 50, 50, 0.71); */
-  --dark-2: rgb(36, 36, 42);
+  --light-2: #f6f6f6;
+  --light-3: #f3f3f3;
+  --dark: grey;
+  --dark-2: #24242a;
   --dark-3: #1a202c;
-  --dark-4: grey;
-  --body-bg: #f3f3f3;
-  --body-grad: linear-gradient(to bottom, rgba(128, 0, 128, 0.1), transparent 25%);
-  --card-bg: var(--light-3);
+  --blue: #020219;
+  /* ui */
+  --body-bg: --light-2;
+  --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.1), transparent 25%);
   --body-text: var(--dark-3);
+  --card-bg: var(--light);
 }
 
 :root[theme=dark] {
-  --prim: #7f7fff;
-  --body-bg: #020219;
-  --body-grad: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
-  /* --body-grad: linear-gradient(125deg, #00103a 0%, #3e5f77 100%); */
-  /* --body-grad: linear-gradient(to bottom, rgba(128, 0, 128, 0.1), var(--dark) 25%); */
+  --body-bg: var(--blue);
+  --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
   --body-text: var(--light);
-  --card-bg: var(--dark-2);
+  --card-bg: var(--dark-3);
 }
 
 body {
   background-color: var(--body-bg);
-  background-image: var(--body-grad);
+  background-image: var(--body-gradient);
   color: var(--body-text);
   font-family: "Montserrat", sans-serif;
   transition: background-color 0.2s, color 0.2s;
@@ -2762,7 +2759,7 @@ html {
 }
 
 .txt-alt {
-  color: var(--dark-4);
+  color: var(--dark);
 }
 
 .txt-center {
@@ -2779,6 +2776,10 @@ html {
 
 .fw-bold {
   font-weight: 700;
+}
+
+.txt-50 {
+  font-size: 50px;
 }
 
 .mt-0 {
@@ -2822,10 +2823,6 @@ html {
 }
 .hero__content {
   max-width: 500px;
-}
-
-.title-emoji {
-  font-size: 50px;
 }
 
 .profile-card {
@@ -2894,7 +2891,7 @@ html {
   width: 145px;
 }
 
-.service-card {
+.service {
   position: absolute;
   display: flex;
   align-items: center;
@@ -2905,12 +2902,8 @@ html {
   border-radius: 8px;
   box-shadow: inherit;
 }
-.service-card img {
+.service img {
   margin-right: 10px;
-}
-
-.app {
-  position: absolute;
 }
 
 .skills-wrapper {

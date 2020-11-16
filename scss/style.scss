@@ -32,10 +32,6 @@
   }
 }
 
-.title-emoji {
-  font-size: 50px;
-}
-
 
 .profile-card {
   position: relative;
@@ -112,7 +108,7 @@
   }
 }
 
-.service-card {
+.service {
   position: absolute;
   display: flex;
   align-items: center;
@@ -126,10 +122,6 @@
   img {
     margin-right: 10px;
   }
-}
-
-.app {
-  position: absolute;
 }
 
 .skills-wrapper {
