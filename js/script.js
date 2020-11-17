@@ -1,19 +1,54 @@
 window.addEventListener("load", function loadHandler() {
-  let theme = '';
+  const mqSystemDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const supportsSystemTheme = 
+    mqSystemDarkTheme.media === '(prefers-color-scheme: dark)';
+  const previouslySavedTheme = localStorage.theme;
+  const themePicker = document.querySelector('.js-theme-picker');
+  // TODO: HIDE BRIEF FLASH OF INITIAL THEME ON PAGE LOAD (currently all good when initial theme is keeped)
+  
+  // Set initial theme
+  if (previouslySavedTheme) {
+    setTheme(previouslySavedTheme, true);
+  } else {
+    setTheme(supportsSystemTheme ? 'system' : 'light', true);
+  }
 
-  // Pick theme
-  let themePicker = document.querySelector('.js-theme-picker');
+  // Hide option if system theme not supported
+  if (!supportsSystemTheme) {
+    themePicker.querySelector('[value="system"]').remove();
+  }
+
   themePicker.addEventListener('change', (ev) => {
-    console.log('theme picker change, event: ', ev.target.value);
-    let theme = ev.target.value;
-    document.documentElement.setAttribute('theme', theme);
+    console.log('theme picker, change to theme: ', ev.target.value);
+    let newTheme = ev.target.value;
+    setTheme(newTheme);
   })
 
+  function setTheme(theme, syncPicker) {
+    if (theme === 'system') {
+      mqSystemDarkTheme.onchange = () => {
+        toggleDarkMode(mqSystemDarkTheme.matches);
+      }
+      toggleDarkMode(mqSystemDarkTheme.matches);
+    } else {
+      mqSystemDarkTheme.onchange = null;
+      toggleDarkMode(theme === 'dark');
+    }
+    localStorage.theme = theme;
 
-  const mqDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-  /* mqDarkTheme.onchange = () => {
-    mqDarkTheme.matches ? theme = 
-  } */
+    if (syncPicker) {
+      themePicker.querySelector(`[value=${theme}]`).checked = true;
+    }
+  }
+
+  function toggleDarkMode(dark) {
+    if (dark) {
+      document.documentElement.setAttribute('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('theme');
+    }
+  }
+
 
   // Activate slider
   const slider = new KeenSlider("#slider", {
@@ -43,17 +78,7 @@ window.addEventListener("load", function loadHandler() {
           instance.moveToSlide(idx)
         })
       })
-      updateClasses(instance)
-    },
-    slideChanged(instance) {
-      console.log('slide changed, instance: ', instance);
-      updateClasses(instance)
-    },
-    afterChange(instance) {
-      console.log('after change, instance: ', instance);
-    },
-    dragEnd(instance) {
-      console.log('drag end, instance: ', instance);
+      updateClasses(instance);
     }
   })
   
