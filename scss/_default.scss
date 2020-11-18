@@ -15,7 +15,7 @@
   
 
   /* ui */
-  --body-bg: --light-2;
+  --body-bg: var(--light-2);
   --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.1), transparent 25%);
   --body-text: var(--dark-3);
   --card-bg: var(--light);
@@ -25,7 +25,7 @@
   --body-bg: var(--blue);
   --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
   --body-text: var(--light);
-  --card-bg: var(--dark-3);
+  --card-bg: var(--dark-2);
 }
 
 body {
@@ -83,6 +83,20 @@ p {
 }
 
 p:last-child { margin-top: 0; }
+
+fieldset {
+  border: none;
+}
+
+legend {
+  text-align: center;
+}
+
+[type="radio"] {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
 
 /* @media (prefers-color-scheme: dark) {
   :root {
