@@ -1,45 +1,31 @@
 window.addEventListener("load", function loadHandler() {
-  const mqSystemDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-  const supportsSystemTheme = 
-    mqSystemDarkTheme.media === '(prefers-color-scheme: dark)';
-  const previouslySavedTheme = localStorage.theme;
   const themePicker = document.querySelector('.js-theme-picker');
-  // TODO: HIDE BRIEF FLASH OF INITIAL THEME ON PAGE LOAD (currently all good when initial theme is keeped)
-  
-  // Set initial theme
-  if (previouslySavedTheme) {
-    setTheme(previouslySavedTheme, true);
-  } else {
-    setTheme(supportsSystemTheme ? 'system' : 'light', true);
-  }
+  const mediaQueryDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-  // Hide option if system theme not supported
-  if (!supportsSystemTheme) {
-    themePicker.querySelector('[value="system"]').remove();
+  // Set initial picker value
+  let theme = localStorage.theme || 'system';
+  themePicker.querySelector(`[value=${theme}]`).checked = true;
+
+  if (theme === 'system') {
+    // Set initial system theme listener
+    mediaQueryDarkTheme.onchange = () => {
+      toggleDarkMode(mediaQueryDarkTheme.matches);
+    }
   }
 
   themePicker.addEventListener('change', (ev) => {
-    console.log('theme picker, change to theme: ', ev.target.value);
     let newTheme = ev.target.value;
-    setTheme(newTheme);
-  })
-
-  function setTheme(theme, syncPicker) {
-    if (theme === 'system') {
-      mqSystemDarkTheme.onchange = () => {
-        toggleDarkMode(mqSystemDarkTheme.matches);
+    localStorage.theme = newTheme;
+    if (newTheme === 'system') {
+      mediaQueryDarkTheme.onchange = () => {
+        toggleDarkMode(mediaQueryDarkTheme.matches);
       }
-      toggleDarkMode(mqSystemDarkTheme.matches);
+      toggleDarkMode(mediaQueryDarkTheme.matches);
     } else {
-      mqSystemDarkTheme.onchange = null;
-      toggleDarkMode(theme === 'dark');
+      mediaQueryDarkTheme.onchange = null;
+      toggleDarkMode(newTheme === 'dark');
     }
-    localStorage.theme = theme;
-
-    if (syncPicker) {
-      themePicker.querySelector(`[value=${theme}]`).checked = true;
-    }
-  }
+  })
 
   function toggleDarkMode(dark) {
     if (dark) {

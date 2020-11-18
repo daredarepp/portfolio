@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.js" defer></script>
   <script src="js/script.js" defer></script>
+  <script>
+    // Turn on dark mode here to avoid brief light flash
+    let savedTheme = localStorage.theme;
+    if ((savedTheme === 'dark') || (savedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('theme', 'dark');
+    }
+  </script>
 </head>
 <body>
   <header>
