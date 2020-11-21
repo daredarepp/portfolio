@@ -37,8 +37,9 @@ window.addEventListener("load", function loadHandler() {
 
 
   // Activate slider
-  const slider = new KeenSlider("#slider", {
-    slidesPerView: 3,
+  /* const slider = new KeenSlider(".skills-wrapper", {
+    slidesPerView: 4,
+    slides: '.skill-card',
     // loop: true,
     spacing: 20,
     // centered: true,
@@ -66,7 +67,7 @@ window.addEventListener("load", function loadHandler() {
       })
       updateClasses(instance);
     }
-  })
+  }) */
   
   function updateClasses(instance) {
     var slide = instance.details().relativeSlide

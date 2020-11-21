@@ -2,7 +2,6 @@
 @import 'default';
 @import 'grid';
 @import 'slider-controls';
-@import 'helpers';
 
 .container {
   width: 100%;
@@ -21,29 +20,30 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 65vh;
+  height: 55vh;
   min-height: 550px;
   max-height: 630px;
-  padding-top: 80px;
-  padding-bottom: 0;
 
   &__content {
-    max-width: 500px;
+    max-width: 480px;
   }
 }
 
 
-.profile-card {
+.profile {
   position: relative;
   display: flex;
+  width: 280px;
+  max-height: 266px;
+  margin: 0 100px;
   flex-shrink: 0;
   flex-direction: column;
   align-items: center;
-  width: 280px;
   padding: 30px;
   background-color: var(--card-bg);
-  box-shadow: 0 4px 20px -3px rgba(0,0,0,.15);
+  box-shadow: var(--card-shadow);
   border-radius: 20px;
+  transition: background-color .2s;
 
   &__avatar {
     width: 125px;
@@ -57,7 +57,7 @@
     // filter: grayscale(1);
   }
 
-  &__job-desc {
+  &__position {
     position: relative;
     margin-top: -25px;
     padding: 7px 10px;
@@ -80,55 +80,59 @@
     color: grey;
   }
 
-  &__skill {
+  &__service {
     position: absolute;
-    right: 110%;
     display: flex;
-    width: 95px;
+    align-items: center;
     padding: 10px;
+    font-size: 12px;
+    color: grey;
     background-color: inherit;
     border-radius: 8px;
     box-shadow: inherit;
-  
+
+    &--top {
+      top: -50px;
+      left: -80px;
+    }
+
+    &--left {
+      top: 50%;
+      left: -130px;
+    }
+
+    &--right {
+      top: 60%;
+      right: -120px;
+    }
+
     img {
       margin-right: 10px;
     }
-  
-    &--css {
-      right: auto;
-      left: 105%;
-      top: 150px;
-    }
-  
-    &--text {
-      top: 120px;
-      right: 90%;
-      width: 145px;
-    }
   }
-}
 
-.service {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  font-size: 14px;
-  color: grey;
-  background-color: inherit;
-  border-radius: 8px;
-  box-shadow: inherit;
+  &__app {
+    position: absolute;
+    box-shadow: inherit;
 
-  img {
-    margin-right: 10px;
+    &--right {
+      top: 30px;
+      right: -25px;
+    }
+
+    &--bottom {
+      bottom: -25px;
+      left: 25px;
+    }
   }
 }
 
 .skills-wrapper {
   position: relative;
-  max-width: 700px;
-  margin-left: auto;
-  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .skill-card {
@@ -138,15 +142,15 @@
   justify-content: center;
   align-items: center;
   vertical-align: middle;
-  // margin-right: 20px;
-  // margin-bottom: 20px;
-  width: 135px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 200px;
   height: 170px;
   padding: 15px 25px;
   text-transform: uppercase;
   background-color: var(--card-bg);
   border-radius: 20px;
-  box-shadow: 0 4px 20px -3px rgba(0,0,0,.15);
+  box-shadow: var(--card-shadow);
   overflow: hidden;
 
   &__logo-wrap {
@@ -169,7 +173,7 @@
       height: 100%;
       background-color: #ff000038;
       border-radius: 50%;
-      // transform: scale(0);
+      transform: scale(6);
       transition: transform .4s cubic-bezier(1, 0, 0, 2);
     }
 
@@ -240,3 +244,6 @@
   background-color: white;
   padding: 20px 30px;
 }
+
+@import 'helpers';
+@import 'responsive';

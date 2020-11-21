@@ -16,9 +16,13 @@
 
   /* ui */
   --body-bg: var(--light-2);
-  --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.1), transparent 25%);
+  --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
   --body-text: var(--dark-3);
   --card-bg: var(--light);
+  --card-shadow: 0 10px 20px -3px rgba(0,0,0,.15);
+
+
+  height: 100%;
 }
 
 :root[theme="dark"] {
@@ -26,9 +30,15 @@
   --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
   --body-text: var(--light);
   --card-bg: var(--dark-2);
+  --card-shadow: none;
 }
 
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 80px;
   background-color: var(--body-bg);
   background-image: var(--body-gradient);
   color: var(--body-text);
@@ -38,6 +48,7 @@ body {
 
 header {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 80px;
   padding: 30px 0;
@@ -60,9 +71,14 @@ img {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 58px;
   line-height: 1;
   font-weight: 700;
+
+  // emoji
+  span {
+    font-size: 50px;
+  }
 }
 
 h2 {
@@ -85,18 +101,35 @@ p {
 p:last-child { margin-top: 0; }
 
 fieldset {
+  display: flex;
   border: none;
 }
 
 legend {
-  text-align: center;
-}
-
-[type="radio"] {
+  position: absolute;
   opacity: 0;
   z-index: -1;
-  position: absolute;
 }
+
+label {
+  padding: 0 5px;
+  
+  img {
+    display: block;
+  }
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+
+  &:focus + label,
+  &:checked + label {
+    border: 3px dotted currentColor;
+  }
+}
+
 
 /* @media (prefers-color-scheme: dark) {
   :root {
