@@ -3130,6 +3130,11 @@ html {
     padding-bottom: 30px;
   }
 
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .profile-wrapper {
     margin-top: 40px;
     padding: 50px 40px 30px;
