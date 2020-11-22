@@ -1,4 +1,12 @@
 @media (max-width: 1199px) {
+  body {
+    padding-top: 70px;
+  }
+
+  header {
+    padding: 20px 0;
+  }
+
   h2 {
     text-align: center;
   }
@@ -16,23 +24,31 @@
     }
   }
 
-  .profile {
-    margin-top: 100px;
+  .profile-wrapper {
+    margin-top: 80px;
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding-top: 20px;
   }
 }
 
 @media (max-width: 700px) {
   .profile {
     &__service {
-      &--top {
+      &--1 {
         left: -60px;
       }
 
-      &--left {
+      &--2 {
         left: -100px;
       }
 
-      &--right {
+      &--3 {
         right: -100px;
       }
     }
@@ -40,12 +56,46 @@
 }
 
 @media (max-width: 575px) {
-  .profile {
+  section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .profile-wrapper {
+    margin-top: 20px;
+    padding-top: 80px;
     overflow: hidden;
   }
+  .profile {
+    /* &__service {
+      &--1 {
+        left: -40px;
+      }
 
-  .skills-wrapper {
-    flex-wrap: wrap;
+      &--2 {
+        top: auto;
+        bottom: -50px;
+        left: -40px;
+      }
+
+      &--3 {
+        top: auto;
+        right: -40px;
+        bottom: -50px;
+      }
+    }
+
+    &__app {
+      &--1 {
+
+      }
+
+      &--2 {
+        top: 50%;
+        left: -20px;
+        bottom: auto;
+      }
+    } */
   }
 }
 
