@@ -314,8 +314,7 @@ progress {
 
 :root {
   /* colors */
-  --prim: purple;
-  --sec: blue;
+  --accent: purple;
   --light: white;
   --light-2: #f6f6f6;
   --light-3: #f3f3f3;
@@ -327,6 +326,7 @@ progress {
   --body-bg: var(--light-2);
   --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
   --body-text: var(--dark-3);
+  --body-text-alt: var(--dark);
   --card-bg: var(--light);
   --card-shadow: 0 10px 20px -3px rgba(0,0,0,.15);
   --card-shadow: 0 0 20px -4px rgba(0,0,0,.15);
@@ -360,6 +360,10 @@ header {
   width: 100%;
   padding: 25px 0;
   z-index: 1;
+}
+
+main {
+  overflow: hidden;
 }
 
 footer {
@@ -408,7 +412,7 @@ p:first-child {
 }
 
 a {
-  color: var(--prim);
+  color: var(--accent);
 }
 
 fieldset {
@@ -426,10 +430,13 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  padding: 0 5px;
-  border-radius: 5px;
+  width: 40px;
+  height: 35px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  filter: grayscale(1);
 }
 label img {
   display: block;
@@ -440,8 +447,8 @@ input[type=radio] {
   opacity: 0;
   z-index: -1;
 }
-input[type=radio]:focus + label, input[type=radio]:checked + label {
-  box-shadow: 0 0 0 1px currentColor;
+input[type=radio]:checked + label {
+  filter: none;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -2812,7 +2819,7 @@ html {
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 22px;
   color: var(--body-text);
   font-weight: 600;
 }
@@ -2845,6 +2852,7 @@ html {
   flex-direction: column;
   align-items: center;
   padding: 30px;
+  text-align: center;
   background-color: var(--card-bg);
   box-shadow: var(--card-shadow);
   border-radius: 20px;
@@ -3021,12 +3029,12 @@ html {
   padding: 20px 30px;
 }
 
-.txt-prim {
-  color: var(--prim);
+.txt-accent {
+  color: var(--accent);
 }
 
 .txt-alt {
-  color: var(--dark);
+  color: var(--body-text-alt);
 }
 
 .txt-center {
@@ -3095,6 +3103,10 @@ html {
     margin-right: 0;
     justify-content: center;
   }
+
+  .profile {
+    max-height: initial;
+  }
 }
 @media (max-width: 991px) {
   .hero {
@@ -3119,9 +3131,8 @@ html {
   }
 
   .profile-wrapper {
-    margin-top: 20px;
-    padding-top: 80px;
-    overflow: hidden;
+    margin-top: 40px;
+    padding: 50px 40px 30px;
   }
 
   .profile {

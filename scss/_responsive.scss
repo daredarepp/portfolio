@@ -29,6 +29,10 @@
     margin-right: 0;
     justify-content: center;
   }
+
+  .profile {
+    max-height: initial;
+  }
 }
 
 @media (max-width: 991px) {
@@ -60,12 +64,12 @@
     padding-top: 30px;
     padding-bottom: 30px;
   }
-  
+
   .profile-wrapper {
-    margin-top: 20px;
-    padding-top: 80px;
-    overflow: hidden;
+    margin-top: 40px;
+    padding: 50px 40px 30px;
   }
+
   .profile {
     /* &__service {
       &--1 {

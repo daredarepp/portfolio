@@ -1,7 +1,6 @@
 :root {
   /* colors */
-  --prim: purple;
-  --sec: blue;
+  --accent: purple;
 
   --light: white;
   --light-2: #f6f6f6;
@@ -18,6 +17,7 @@
   --body-bg: var(--light-2);
   --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
   --body-text: var(--dark-3);
+  --body-text-alt: var(--dark);
   --card-bg: var(--light);
   --card-shadow: 0 10px 20px -3px rgba(0,0,0,.15);
   --card-shadow: 0 0 20px -4px rgba(0,0,0,.15);
@@ -53,6 +53,10 @@ header {
   width: 100%;
   padding: 25px 0;
   z-index: 1;
+}
+
+main {
+  overflow: hidden;
 }
 
 footer {
@@ -101,7 +105,7 @@ p {
 p:first-child { margin-top: 0; }
 
 a {
-  color: var(--prim);
+  color: var(--accent);
 }
 
 fieldset {
@@ -119,10 +123,13 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  padding: 0 5px;
-  border-radius: 5px;
+  width: 40px;
+  height: 35px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  filter: grayscale(1);
   
   img {
     display: block;
@@ -134,9 +141,12 @@ input[type="radio"] {
   opacity: 0;
   z-index: -1;
 
-  &:focus + label,
+  &:focus + label {}
+
   &:checked + label {
-    box-shadow: 0 0 0 1px currentColor;
+    filter: none;
+    // box-shadow: 0 0 0 1px currentColor;
+    // background-color: var(--blue);
   }
 }
 
