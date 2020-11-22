@@ -431,7 +431,7 @@ input[type=radio] {
   z-index: -1;
 }
 input[type=radio]:focus + label, input[type=radio]:checked + label {
-  border: 3px dotted currentColor;
+  box-shadow: 0 0 0 1px currentColor;
 }
 
 /* @media (prefers-color-scheme: dark) {

@@ -126,7 +126,7 @@ input[type="radio"] {
 
   &:focus + label,
   &:checked + label {
-    border: 3px dotted currentColor;
+    box-shadow: 0 0 0 1px currentColor;
   }
 }
 
