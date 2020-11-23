@@ -20,8 +20,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 520px;
-  max-height: 630px;
+  padding-top: 100px;
 
   &__content {
     max-width: 480px;
@@ -150,7 +149,7 @@
   vertical-align: middle;
   margin-right: 20px;
   margin-bottom: 20px;
-  width: 200px;
+  width: 30%;
   height: 100px;
   padding: 15px 25px;
   text-transform: uppercase;
