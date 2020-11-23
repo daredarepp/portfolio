@@ -2,35 +2,36 @@
   /* colors */
   --accent: #bf34bf;
 
-  --light: white;
-  --light-2: #f6f6f6;
-  --light-3: #f3f3f3;
-
-  --dark: grey;
-  --dark-2: #24242a;
-  --dark-3: #1a202c;
-
-  --blue: #020219;
-  
+  // tech colors
+  --tech-color-transparency: 0.2;
+  --html: rgba(241, 101, 41, var(--tech-color-transparency));
+  --css:  rgba(38, 77, 228, var(--tech-color-transparency));
+  --js:  rgba(200, 186, 73, var(--tech-color-transparency));
+  --scss:  rgba(205, 103, 153, var(--tech-color-transparency));
+  --vue:  rgba(65, 184, 131, var(--tech-color-transparency));
+  --tailwind: rgba(29, 169, 187, var(--tech-color-transparency));
+  --git: rgba(240, 81, 51, var(--tech-color-transparency));
+  --grunt: rgba(251, 169, 25, var(--tech-color-transparency));
 
   /* ui */
-  --body-bg: var(--light-2);
+  --body-bg: #f0f1f3;
   --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
-  --body-text: var(--dark-3);
-  --body-text-alt: var(--dark);
-  --card-bg: var(--light);
-  --card-shadow: 0 10px 20px -3px rgba(0,0,0,.15);
-  --card-shadow: 0 0 20px -4px rgba(0,0,0,.15);
+  --body-text: #1a202c;
+  --body-text-alt: grey;
+  --card-bg: white;
+  --transition-duration: .2s;
+  // --card-shadow: 0 10px 20px -3px rgba(0,0,0,.15);
+  // --card-shadow: 0 0 20px -4px rgba(0,0,0,.15);
 
 
   height: 100%;
 }
 
 :root[theme="dark"] {
-  --body-bg: var(--blue);
+  --body-bg: #020219;
   --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
-  --body-text: var(--light);
-  --card-bg: var(--dark-2);
+  --body-text: white;
+  --card-bg: #24242a;
   --card-shadow: none;
 }
 
@@ -44,7 +45,7 @@ body {
   background-image: var(--body-gradient);
   color: var(--body-text);
   font-family: 'Montserrat', sans-serif;
-  transition: background-color .2s, color .2s;
+  transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
 header {
