@@ -23,18 +23,18 @@
     <div class="container d-flex justify-content-between align-items-center">
       <a href="" class="logo">darko.to</a>
 
-      <fieldset class="js-theme-picker">  
+      <fieldset class="theme-picker js-theme-picker">  
         <legend>Theme</legend>
-        <input type="radio" id="theme-light" name="theme" value="light">
-        <label for="theme-light">
+        <input type="radio" id="theme-light" name="theme" value="light" class="theme-option">
+        <label for="theme-light" class="theme-label">
           <img src="images/icons/sun.svg" width="23" height="23" alt="sun">
         </label>
-        <input type="radio" id="theme-dark" name="theme" value="dark">
-        <label for="theme-dark">
+        <input type="radio" id="theme-dark" name="theme" value="dark" class="theme-option">
+        <label for="theme-dark" class="theme-label">
           <img src="images/icons/moon.svg" width="23" height="23" alt="moon">
         </label>
-        <input type="radio" id="theme-system" name="theme" value="system">
-        <label for="theme-system">A</label>
+        <input type="radio" id="theme-system" name="theme" value="system" class="theme-option">
+        <label for="theme-system" class="theme-label">A</label>
         <!-- “Notify by email, grouping, on radio button, checked, one of two”. -->
       </fieldset>  
     </div>
@@ -121,60 +121,76 @@
         </div>
 
         <div class="skills-wrapper">
-          <div class="skill-card">
-            <div class="skill-card__logo-wrap skill-card__logo-wrap--html">
-              <img src="images/logos/html.svg" alt="logo">
+          <div class="row">
+            <div class="col-6 col-md-4">
+              <div class="skill-card skill-card--html">
+                <div class="skill-card__logo-wrap">
+                  <img src="images/logos/html.svg" alt="logo">
+                </div>
+                
+                <h3>html</h3>
+              </div>
             </div>
-            
-            <h3>html</h3>
-          </div>
 
-          <div class="skill-card">
-            <div class="skill-card__logo-wrap skill-card__logo-wrap--css">
-              <img src="images/logos/css.svg" alt="logo">
+            <div class="col-6 col-md-4">
+              <div class="skill-card skill-card--css">
+                <div class="skill-card__logo-wrap">
+                  <img src="images/logos/css.svg" alt="logo">
+                </div>
+                
+                <h3>css</h3>
+              </div>
             </div>
-            
-            <h3>css</h3>
-          </div>
 
-          <div class="skill-card">
-            <div class="skill-card__logo-wrap skill-card__logo-wrap--js">
-              <img src="images/logos/js.svg" alt="logo">
+            <div class="col-6 col-md-4">
+              <div class="skill-card skill-card--js">
+                <div class="skill-card__logo-wrap">
+                  <img src="images/logos/js.svg" alt="logo">
+                </div>
+                
+                <h3>js</h3>
+              </div>
             </div>
-            
-            <h3>js</h3>
-          </div>
 
-          <div class="skill-card">
-            <div class="skill-card__logo-wrap skill-card__logo-wrap--scss">
-              <img src="images/logos/scss.svg" alt="logo">
+            <div class="col-6 col-md-4">
+              <div class="skill-card skill-card--scss">
+                <div class="skill-card__logo-wrap">
+                  <img src="images/logos/scss.svg" alt="logo">
+                </div>
+                
+                <h3>scss</h3>
+              </div>
             </div>
-            
-            <h3>scss</h3>
-          </div>
 
-          <div class="skill-card">
-            <div class="skill-card__logo-wrap skill-card__logo-wrap--vue">
-              <img src="images/logos/vue.svg" alt="logo">
+            <div class="col-6 col-md-4">
+              <div class="skill-card skill-card--vue">
+                <div class="skill-card__logo-wrap">
+                  <img src="images/logos/vue.svg" alt="logo">
+                </div>
+                
+                <h3>vue</h3>
+              </div>
             </div>
-            
-            <h3>vue</h3>
-          </div>
 
-          <div class="skill-card">
-            <div class="skill-card__logo-wrap skill-card__logo-wrap--git">
-              <img src="images/logos/git.svg" alt="logo">
+            <div class="col-6 col-md-4">
+              <div class="skill-card skill-card--grunt">
+                <div class="skill-card__logo-wrap">
+                  <img src="images/logos/grunt.svg" alt="logo">
+                </div>
+                
+                <h3>grunt</h3>
+              </div>
             </div>
             
-            <h3>git</h3>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-card__logo-wrap skill-card__logo-wrap--grunt">
-              <img src="images/logos/grunt.svg" alt="logo">
+            <div class="col-6 col-md-4">
+              <div class="skill-card skill-card--git">
+                <div class="skill-card__logo-wrap">
+                  <img src="images/logos/git.svg" alt="logo">
+                </div>
+                
+                <h3>git</h3>
+              </div>
             </div>
-            
-            <h3>grunt</h3>
           </div>
         </div>
       </div>

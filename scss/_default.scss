@@ -21,7 +21,7 @@
   --card-bg: white;
   --transition-duration: .2s;
   // --card-shadow: 0 10px 20px -3px rgba(0,0,0,.15);
-  // --card-shadow: 0 0 20px -4px rgba(0,0,0,.15);
+  --card-shadow: 0 4px 20px -4px rgba(0,0,0,.1);
 
 
   height: 100%;
@@ -107,48 +107,6 @@ p:first-child { margin-top: 0; }
 
 a {
   color: var(--accent);
-}
-
-fieldset {
-  display: flex;
-  border: none;
-}
-
-legend {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 35px;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--accent);
-  cursor: pointer;
-  filter: grayscale(1);
-  
-  img {
-    display: block;
-  }
-}
-
-input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-
-  &:focus + label {}
-
-  &:checked + label {
-    filter: none;
-    // box-shadow: 0 0 0 1px currentColor;
-    // background-color: var(--blue);
-  }
 }
 
 
