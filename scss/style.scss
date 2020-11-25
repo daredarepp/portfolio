@@ -31,18 +31,13 @@
   position: absolute;
   opacity: 0;
   z-index: -1;
-
-  &:focus + .theme-label {}
-
-  &:checked + .theme-label {
-    filter: none;
-  }
 }
 
 .theme-label {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 40px;
   height: 35px;
   font-size: 20px;
@@ -54,10 +49,29 @@
   img {
     display: block;
   }
+
+  // dot
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 5px;
+    height: 5px;
+    background-color: orange;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  // active state
+  .theme-option:checked + & {
+    filter: none;
+
+    // dot
+    &::after {
+      opacity: 1;
+    }
+  }
 }
-
-
-
 
 
 .hero {
@@ -187,7 +201,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  // width: 33%;
   height: 80px;
   margin-bottom: 30px;
   padding: 15px 25px;
@@ -197,6 +210,53 @@
   overflow: hidden;
   box-shadow: var(--card-shadow);
   transition: background-color var(--transition-duration);
+  z-index: 0;
+
+  // colorful bg
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px;
+    right: 40%;
+    height: 100%;
+    background-color: var(--html);
+    transform: skew(10deg);
+    transition: transform var(--transition-duration);
+    z-index: -1;
+  }
+
+  // line
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 58%;
+    width: 3px;
+    height: 100%;
+    background-color: inherit;
+    transform: skew(10deg);
+    transition: background-color .3s;
+  }
+
+  &--html::before {
+    background-color: var(--html);
+  }
+  &--css::before {
+    background-color: var(--css);
+  }
+  &--js::before {
+    background-color: var(--js);
+  }
+  &--scss::before {
+    background-color: var(--scss);
+  }
+  &--vue::before {
+    background-color: var(--vue);
+  }
+  &--grunt::before {
+    background-color: var(--grunt);
+  }
 
   &__logo-wrap {
     display: flex;
@@ -212,6 +272,14 @@
   img {
     height: 70%;
     transition: transform .3s;
+  }
+
+  &:hover::before {
+    transform: skew(10deg) translateX(100%);
+  }
+
+  &:hover::after {
+    background-color: var(--html);
   }
 }
 

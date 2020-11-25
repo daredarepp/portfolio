@@ -331,7 +331,6 @@ progress {
   --body-text-alt: grey;
   --card-bg: white;
   --transition-duration: .2s;
-  --card-shadow: 0 4px 20px -4px rgba(0,0,0,.1);
   height: 100%;
 }
 
@@ -339,7 +338,10 @@ progress {
   --body-bg: #020219;
   --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
   --body-text: white;
-  --card-bg: #24242a;
+  /* --card-bg: #24242a;
+  --card-bg: #28283a;
+  --card-bg: #202031; */
+  --card-bg: #1e1e2d;
   --card-shadow: none;
 }
 
@@ -2805,14 +2807,12 @@ html {
   opacity: 0;
   z-index: -1;
 }
-.theme-option:checked + .theme-label {
-  filter: none;
-}
 
 .theme-label {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 40px;
   height: 35px;
   font-size: 20px;
@@ -2823,6 +2823,22 @@ html {
 }
 .theme-label img {
   display: block;
+}
+.theme-label::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 5px;
+  height: 5px;
+  background-color: orange;
+  border-radius: 50%;
+  opacity: 0;
+}
+.theme-option:checked + .theme-label {
+  filter: none;
+}
+.theme-option:checked + .theme-label::after {
+  opacity: 1;
 }
 
 .hero {
@@ -2947,6 +2963,48 @@ html {
   overflow: hidden;
   box-shadow: var(--card-shadow);
   transition: background-color var(--transition-duration);
+  z-index: 0;
+}
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  right: 40%;
+  height: 100%;
+  background-color: var(--html);
+  transform: skew(10deg);
+  transition: transform var(--transition-duration);
+  z-index: -1;
+}
+.skill-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 58%;
+  width: 3px;
+  height: 100%;
+  background-color: inherit;
+  transform: skew(10deg);
+  transition: background-color 0.3s;
+}
+.skill-card--html::before {
+  background-color: var(--html);
+}
+.skill-card--css::before {
+  background-color: var(--css);
+}
+.skill-card--js::before {
+  background-color: var(--js);
+}
+.skill-card--scss::before {
+  background-color: var(--scss);
+}
+.skill-card--vue::before {
+  background-color: var(--vue);
+}
+.skill-card--grunt::before {
+  background-color: var(--grunt);
 }
 .skill-card__logo-wrap {
   display: flex;
@@ -2960,6 +3018,12 @@ html {
 .skill-card img {
   height: 70%;
   transition: transform 0.3s;
+}
+.skill-card:hover::before {
+  transform: skew(10deg) translateX(100%);
+}
+.skill-card:hover::after {
+  background-color: var(--html);
 }
 
 .big-card {
@@ -2977,6 +3041,10 @@ html {
 
 .txt-center {
   text-align: center;
+}
+
+.txt-right {
+  text-align: right;
 }
 
 .txt-italic {
