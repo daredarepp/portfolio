@@ -331,6 +331,7 @@ progress {
   --body-text-alt: grey;
   --card-bg: white;
   --transition-duration: .2s;
+  --card-shadow: 0 2px 10px -4px rgba(0,0,0,.1);
   height: 100%;
 }
 
@@ -343,6 +344,9 @@ progress {
   --card-bg: #202031; */
   --card-bg: #1e1e2d;
   --card-shadow: none;
+}
+:root[theme=dark] footer {
+  background-color: rgba(36, 36, 42, 0.4);
 }
 
 body {
@@ -371,8 +375,12 @@ main {
 }
 
 footer {
-  background-color: rgba(192, 192, 192, 0.2);
+  background-color: rgba(36, 36, 42, 0.05);
   padding: 20px 0;
+}
+footer a {
+  display: inline-block;
+  margin-top: 10px;
 }
 
 section {
@@ -2790,6 +2798,7 @@ html {
   font-size: 22px;
   color: var(--body-text);
   font-weight: 600;
+  text-decoration: none;
 }
 
 .theme-picker {
@@ -2845,7 +2854,8 @@ html {
   position: relative;
   display: flex;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .hero__content {
   max-width: 480px;
@@ -2877,16 +2887,15 @@ html {
 .profile__avatar {
   width: 125px;
   height: 125px;
-  margin-bottom: 10px;
-  border: 5px solid rgba(255, 255, 255, 0.808);
+  border: 5px solid var(--card-bg);
   border-radius: 50%;
-  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.05);
   object-fit: cover;
   object-position: top;
+  transition: border var(--transition-duration);
 }
 .profile__position {
   position: relative;
-  margin-top: -25px;
+  margin-top: -15px;
   padding: 7px 10px;
   font-size: 12px;
   background: linear-gradient(to bottom right, blue, purple);
@@ -2913,6 +2922,7 @@ html {
   color: grey;
   background-color: inherit;
   border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   box-shadow: inherit;
 }
 .profile__service--1 {
@@ -2945,17 +2955,17 @@ html {
 
 .skills-wrapper {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
   margin-top: 40px;
 }
 
-.skill-card {
+.tech {
   position: relative;
   display: flex;
   align-items: center;
-  height: 80px;
-  margin-bottom: 30px;
+  height: 70px;
   padding: 15px 25px;
   text-transform: uppercase;
   background-color: var(--card-bg);
@@ -2965,65 +2975,35 @@ html {
   transition: background-color var(--transition-duration);
   z-index: 0;
 }
-.skill-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -30px;
-  right: 40%;
-  height: 100%;
-  background-color: var(--html);
-  transform: skew(10deg);
-  transition: transform var(--transition-duration);
-  z-index: -1;
-}
-.skill-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 58%;
-  width: 3px;
-  height: 100%;
-  background-color: inherit;
-  transform: skew(10deg);
-  transition: background-color 0.3s;
-}
-.skill-card--html::before {
+.tech--html::before {
   background-color: var(--html);
 }
-.skill-card--css::before {
+.tech--css::before {
   background-color: var(--css);
 }
-.skill-card--js::before {
+.tech--js::before {
   background-color: var(--js);
 }
-.skill-card--scss::before {
+.tech--scss::before {
   background-color: var(--scss);
 }
-.skill-card--vue::before {
+.tech--vue::before {
   background-color: var(--vue);
 }
-.skill-card--grunt::before {
+.tech--grunt::before {
   background-color: var(--grunt);
 }
-.skill-card__logo-wrap {
+.tech__logo-wrap {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  width: 60px;
-  height: 100%;
-  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
 }
-.skill-card img {
+.tech img {
   height: 70%;
-  transition: transform 0.3s;
-}
-.skill-card:hover::before {
-  transform: skew(10deg) translateX(100%);
-}
-.skill-card:hover::after {
-  background-color: var(--html);
 }
 
 .big-card {
@@ -3063,12 +3043,28 @@ html {
   font-size: 50px;
 }
 
+.txt-14 {
+  font-size: 14px;
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
 .mt-0 {
   margin-top: 0;
 }
 
 .mt-5 {
   margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 .p-relative {
