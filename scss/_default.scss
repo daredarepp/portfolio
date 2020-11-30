@@ -29,7 +29,8 @@
 
 :root[theme="dark"] {
   --body-bg: #020219;
-  --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
+  // --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
+  --body-gradient: linear-gradient(to bottom, rgba(191, 52, 191, 0.1), transparent 25%);
   --body-text: white;
   /* --card-bg: #24242a;
   --card-bg: #28283a;

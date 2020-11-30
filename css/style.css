@@ -337,7 +337,7 @@ progress {
 
 :root[theme=dark] {
   --body-bg: #020219;
-  --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
+  --body-gradient: linear-gradient(to bottom, rgba(191, 52, 191, 0.1), transparent 25%);
   --body-text: white;
   /* --card-bg: #24242a;
   --card-bg: #28283a;
@@ -2885,9 +2885,8 @@ html {
   transition: background-color var(--transition-duration);
 }
 .profile__avatar {
-  width: 125px;
-  height: 125px;
-  border: 5px solid var(--card-bg);
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
@@ -2935,7 +2934,11 @@ html {
 }
 .profile__service--3 {
   top: 60%;
-  right: -120px;
+  right: -110px;
+}
+.profile__service--4 {
+  bottom: -50px;
+  right: -30px;
 }
 .profile__service img {
   margin-right: 10px;
@@ -2956,7 +2959,7 @@ html {
 .skills-wrapper {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
   grid-gap: 30px;
   margin-top: 40px;
 }
@@ -2965,7 +2968,6 @@ html {
   position: relative;
   display: flex;
   align-items: center;
-  height: 70px;
   padding: 15px 25px;
   text-transform: uppercase;
   background-color: var(--card-bg);
@@ -3108,10 +3110,17 @@ html {
   .profile {
     max-height: initial;
   }
+
+  .skills-wrapper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media (max-width: 991px) {
   .hero {
     padding-top: 20px;
+    padding-bottom: 50px;
   }
 }
 @media (max-width: 700px) {
@@ -3141,36 +3150,8 @@ html {
     padding: 50px 40px 30px;
   }
 
-  .profile {
-    /* &__service {
-      &--1 {
-        left: -40px;
-      }
-
-      &--2 {
-        top: auto;
-        bottom: -50px;
-        left: -40px;
-      }
-
-      &--3 {
-        top: auto;
-        right: -40px;
-        bottom: -50px;
-      }
-    }
-
-    &__app {
-      &--1 {
-
-      }
-
-      &--2 {
-        top: 50%;
-        left: -20px;
-        bottom: auto;
-      }
-    } */
+  footer {
+    margin-top: 20px;
   }
 }
 @media (max-width: 400px) {

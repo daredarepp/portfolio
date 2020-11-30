@@ -111,11 +111,9 @@
   transition: background-color var(--transition-duration);
 
   &__avatar {
-    width: 125px;
-    height: 125px;
-    border: 5px solid var(--card-bg);
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    // box-shadow: 0 0 10px rgba(0,0,0,.15);
     object-fit: cover;
     object-position: top;
     transition: border var(--transition-duration);
@@ -168,7 +166,12 @@
 
     &--3 {
       top: 60%;
-      right: -120px;
+      right: -110px;
+    }
+
+    &--4 {
+      bottom: -50px;
+      right: -30px;
     }
 
     img {
@@ -195,7 +198,7 @@
 .skills-wrapper {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
   grid-gap: 30px;
   margin-top: 40px;
 }
@@ -204,7 +207,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 70px;
   padding: 15px 25px;
   text-transform: uppercase;
   background-color: var(--card-bg);

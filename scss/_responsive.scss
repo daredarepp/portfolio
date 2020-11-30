@@ -17,7 +17,7 @@
 
   .hero {
     padding-top: 50px;
-    
+
     &__content {
       text-align: center;
     }
@@ -32,11 +32,18 @@
   .profile {
     max-height: initial;
   }
+
+  .skills-wrapper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 991px) {
   .hero {
     padding-top: 20px;
+    padding-bottom: 50px;
   }
 }
 
@@ -74,36 +81,8 @@
     padding: 50px 40px 30px;
   }
 
-  .profile {
-    /* &__service {
-      &--1 {
-        left: -40px;
-      }
-
-      &--2 {
-        top: auto;
-        bottom: -50px;
-        left: -40px;
-      }
-
-      &--3 {
-        top: auto;
-        right: -40px;
-        bottom: -50px;
-      }
-    }
-
-    &__app {
-      &--1 {
-
-      }
-
-      &--2 {
-        top: 50%;
-        left: -20px;
-        bottom: auto;
-      }
-    } */
+  footer {
+    margin-top: 20px;
   }
 }
 
