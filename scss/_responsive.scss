@@ -107,18 +107,19 @@
 
     &__app {
       &--1 {
-        top: -20px;
+        top: -15px;
         right: 40px;
       }
 
       &--2 {
-        bottom: -20px;
+        bottom: -15px;
         left: 40px;
       }
     }
   }
 
   .tech-wrapper {
+    grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
   }
 

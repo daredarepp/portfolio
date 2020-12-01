@@ -409,7 +409,7 @@ h2 {
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -3169,15 +3169,16 @@ html {
     right: 30%;
   }
   .profile__app--1 {
-    top: -20px;
+    top: -15px;
     right: 40px;
   }
   .profile__app--2 {
-    bottom: -20px;
+    bottom: -15px;
     left: 40px;
   }
 
   .tech-wrapper {
+    grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
   }
 
