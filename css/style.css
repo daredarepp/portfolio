@@ -425,6 +425,7 @@ p:first-child {
 
 a {
   color: var(--accent);
+  text-decoration: none;
 }
 
 /* @media (prefers-color-scheme: dark) {
