@@ -337,7 +337,7 @@ progress {
 
 :root[theme=dark] {
   --body-bg: #020219;
-  --body-gradient: linear-gradient(to bottom, rgba(191, 52, 191, 0.1), transparent 25%);
+  --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
   --body-text: white;
   /* --card-bg: #24242a;
   --card-bg: #28283a;
@@ -2953,10 +2953,10 @@ html {
 }
 .profile__app--2 {
   bottom: -25px;
-  left: 25px;
+  left: 40px;
 }
 
-.skills-wrapper {
+.tech-wrapper {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
@@ -3111,7 +3111,7 @@ html {
     max-height: initial;
   }
 
-  .skills-wrapper {
+  .tech-wrapper {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -3147,7 +3147,37 @@ html {
 
   .profile-wrapper {
     margin-top: 40px;
-    padding: 50px 40px 30px;
+    padding: 80px 0 40px;
+  }
+
+  .profile__service--1 {
+    top: -80px;
+    left: 30%;
+  }
+  .profile__service--2 {
+    top: -30px;
+    left: 20px;
+  }
+  .profile__service--3 {
+    top: auto;
+    right: 20px;
+    bottom: -30px;
+  }
+  .profile__service--4 {
+    bottom: -80px;
+    right: 30%;
+  }
+  .profile__app--1 {
+    top: -20px;
+    right: 40px;
+  }
+  .profile__app--2 {
+    bottom: -20px;
+    left: 40px;
+  }
+
+  .tech-wrapper {
+    grid-gap: 15px;
   }
 
   footer {

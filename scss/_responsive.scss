@@ -33,7 +33,7 @@
     max-height: initial;
   }
 
-  .skills-wrapper {
+  .tech-wrapper {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -78,7 +78,48 @@
 
   .profile-wrapper {
     margin-top: 40px;
-    padding: 50px 40px 30px;
+    padding: 80px 0 40px;
+  }
+
+  .profile {
+    &__service {
+      &--1 {
+        top: -80px;
+        left: 30%;
+      }
+
+      &--2 {
+        top: -30px;
+        left: 20px;
+      }
+
+      &--3 {
+        top: auto;
+        right: 20px;
+        bottom: -30px;
+      }
+
+      &--4 {
+        bottom: -80px;
+        right: 30%;
+      }
+    }
+
+    &__app {
+      &--1 {
+        top: -20px;
+        right: 40px;
+      }
+
+      &--2 {
+        bottom: -20px;
+        left: 40px;
+      }
+    }
+  }
+
+  .tech-wrapper {
+    grid-gap: 15px;
   }
 
   footer {
