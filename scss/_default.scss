@@ -20,8 +20,7 @@
   --body-text-alt: grey;
   --card-bg: white;
   --transition-duration: .2s;
-  // --card-shadow: 0 10px 20px -3px rgba(0,0,0,.15);
-  --card-shadow: 0 2px 10px -4px rgba(0,0,0,.1);
+  --card-shadow: 0 4px 20px rgba(0,0,0,.05);
 
 
   height: 100%;
@@ -32,12 +31,16 @@
   --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
   // --body-gradient: linear-gradient(to bottom, rgba(191, 52, 191, 0.1), transparent 25%);
   --body-text: white;
-  /* --card-bg: #24242a;
-  --card-bg: #28283a;
-  --card-bg: #202031; */
-  // --card-bg: #21212a;
+  --body-text-alt: #b8b8b8;
   --card-bg: #1e1e2d;
   --card-shadow: none;
+
+  
+  .profile {
+    &__service {
+      background-color: #262637;
+    }
+  }
 
   footer {
     background-color: rgba(36, 36, 42, 0.4);
