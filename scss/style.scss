@@ -206,6 +206,8 @@
 }
 
 .tech {
+  --hover-duration: .3s;
+
   position: relative;
   display: flex;
   align-items: center;
@@ -217,6 +219,18 @@
   box-shadow: var(--card-shadow);
   transition: background-color var(--transition-duration);
   z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 90px;
+    height: 90px;
+    transform: rotate(45deg);
+    transition: transform var(--hover-duration);
+    z-index: -1;
+  }
 
   &--html::before {
     background-color: var(--html);
@@ -244,12 +258,47 @@
     flex-shrink: 0;
     width: 40px;
     height: 40px;
-    margin-right: 30px;
+    padding: 5px;
+    border-radius: 50%;
   }
 
-  // tech logo
+  &--html &__logo-wrap {
+    background-color: var(--html);
+  }
+  &--css &__logo-wrap {
+    background-color: var(--css);
+  }
+  &--js &__logo-wrap {
+    background-color: var(--js);
+  }
+  &--scss &__logo-wrap {
+    background-color: var(--scss);
+  }
+  &--vue &__logo-wrap {
+    background-color: var(--vue);
+  }
+  &--grunt &__logo-wrap {
+    background-color: var(--grunt);
+  }
+
+  // logo
   img {
     height: 70%;
+  }
+
+  h3 {
+    margin-left: 50px;
+    transition: transform var(--hover-duration);
+  }
+
+  &:hover {
+    &::before {
+      transform: rotate(45deg) scale(1.5);
+    }
+
+    h3 {
+      transform: translateX(30px);
+    }
   }
 }
 

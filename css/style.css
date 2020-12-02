@@ -3007,6 +3007,7 @@ html {
 }
 
 .tech {
+  --hover-duration: .3s;
   position: relative;
   display: flex;
   align-items: center;
@@ -3018,6 +3019,17 @@ html {
   box-shadow: var(--card-shadow);
   transition: background-color var(--transition-duration);
   z-index: 0;
+}
+.tech::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 90px;
+  height: 90px;
+  transform: rotate(45deg);
+  transition: transform var(--hover-duration);
+  z-index: -1;
 }
 .tech--html::before {
   background-color: var(--html);
@@ -3044,10 +3056,39 @@ html {
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  margin-right: 30px;
+  padding: 5px;
+  border-radius: 50%;
+}
+.tech--html .tech__logo-wrap {
+  background-color: var(--html);
+}
+.tech--css .tech__logo-wrap {
+  background-color: var(--css);
+}
+.tech--js .tech__logo-wrap {
+  background-color: var(--js);
+}
+.tech--scss .tech__logo-wrap {
+  background-color: var(--scss);
+}
+.tech--vue .tech__logo-wrap {
+  background-color: var(--vue);
+}
+.tech--grunt .tech__logo-wrap {
+  background-color: var(--grunt);
 }
 .tech img {
   height: 70%;
+}
+.tech h3 {
+  margin-left: 50px;
+  transition: transform var(--hover-duration);
+}
+.tech:hover::before {
+  transform: rotate(45deg) scale(1.5);
+}
+.tech:hover h3 {
+  transform: translateX(30px);
 }
 
 .big-card {
@@ -3227,6 +3268,7 @@ html {
 
   footer {
     margin-top: 20px;
+    text-align: center;
   }
 }
 @media (max-width: 400px) {
