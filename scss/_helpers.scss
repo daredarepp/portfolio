@@ -1,6 +1,7 @@
 // text
-.txt-accent { color: var(--accent); }
-.txt-alt { color: var(--body-text-alt); }
+.txt-alt {
+  color: var(--theme-on-bg--alt);
+}
 
 .txt-center { text-align: center; }
 .txt-right { text-align: right; }

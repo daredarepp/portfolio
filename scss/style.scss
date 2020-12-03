@@ -13,7 +13,7 @@
 
 .logo {
   font-size: 22px;
-  color: var(--body-text);
+  color: var(--theme-on-bg);
   font-weight: 600;
   text-decoration: none;
 }
@@ -44,7 +44,7 @@
   height: 35px;
   font-size: 20px;
   font-weight: 600;
-  color: var(--accent);
+  color: orange;
   cursor: pointer;
   filter: grayscale(1);
   
@@ -106,18 +106,20 @@
   align-items: center;
   padding: 30px;
   text-align: center;
-  background-color: var(--card-bg);
-  box-shadow: var(--card-shadow);
+  background-color: var(--theme-surface);
+  box-shadow: var(--shadow);
   border-radius: 20px;
-  transition: background-color var(--transition-duration);
+  transition: background-color var(--transition);
 
   &__avatar {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
     object-fit: cover;
     object-position: top;
-    transition: border var(--transition-duration);
+    border: 5px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+    box-shadow: inherit;
+    transition: border var(--transition);
   }
 
   &__position {
@@ -140,7 +142,7 @@
   &__loc {
     margin-top: 10px;
     font-size: 12px;
-    color: var(--body-text-alt);
+    color: var(--theme-on-bg--alt);
   }
 
   &__service {
@@ -149,11 +151,11 @@
     align-items: center;
     padding: 10px 15px;
     font-size: 12px;
-    color: var(--body-text-alt);
-    background-color: var(--card-bg);
+    color: var(--theme-on-bg--alt);
+    background-color: var(--theme-surface);
     border-radius: 13px;
     box-shadow: 0 4px 20px rgba(0,0,0,.1);
-    transition: background-color var(--transition-duration);
+    transition: background-color var(--transition);
 
 
     &--1 {
@@ -206,50 +208,17 @@
 }
 
 .tech {
-  --hover-duration: .3s;
-
   position: relative;
   display: flex;
   align-items: center;
   padding: 15px 25px;
   text-transform: uppercase;
-  background-color: var(--card-bg);
+  background-color: var(--theme-surface);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: var(--card-shadow);
-  transition: background-color var(--transition-duration);
-  z-index: 0;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 90px;
-    height: 90px;
-    transform: rotate(45deg);
-    transition: transform var(--hover-duration);
-    z-index: -1;
-  }
-
-  &--html::before {
-    background-color: var(--html);
-  }
-  &--css::before {
-    background-color: var(--css);
-  }
-  &--js::before {
-    background-color: var(--js);
-  }
-  &--scss::before {
-    background-color: var(--scss);
-  }
-  &--vue::before {
-    background-color: var(--vue);
-  }
-  &--grunt::before {
-    background-color: var(--grunt);
-  }
+  box-shadow: var(--shadow);
+  transition-property: background-color;
+  transition-duration: var(--transition);
 
   &__logo-wrap {
     display: flex;
@@ -262,25 +231,6 @@
     border-radius: 50%;
   }
 
-  &--html &__logo-wrap {
-    background-color: var(--html);
-  }
-  &--css &__logo-wrap {
-    background-color: var(--css);
-  }
-  &--js &__logo-wrap {
-    background-color: var(--js);
-  }
-  &--scss &__logo-wrap {
-    background-color: var(--scss);
-  }
-  &--vue &__logo-wrap {
-    background-color: var(--vue);
-  }
-  &--grunt &__logo-wrap {
-    background-color: var(--grunt);
-  }
-
   // logo
   img {
     height: 70%;
@@ -288,23 +238,56 @@
 
   h3 {
     margin-left: 50px;
-    transition: transform var(--hover-duration);
   }
 
-  &:hover {
-    &::before {
-      transform: rotate(45deg) scale(1.5);
-    }
+  // colors
+  &--html {
+    background-color: var(--theme-html);
 
-    h3 {
-      transform: translateX(30px);
+    &__logo-wrap {
+      background-color: var(--theme-html);
     }
   }
-}
 
-.big-card {
-  background-color: white;
-  padding: 20px 30px;
+  &--css {
+    background-color: var(--theme-css);
+
+    &__logo-wrap {
+      background-color: var(--theme-css);
+    }
+  }
+
+  &--js {
+    background-color: var(--theme-js);
+
+    &__logo-wrap {
+      background-color: var(--theme-js);
+    }
+  }
+
+  &--scss {
+    background-color: var(--theme-scss);
+
+    &__logo-wrap {
+      background-color: var(--theme-scss);
+    }
+  }
+
+  &--vue {
+    background-color: var(--theme-vue);
+
+    &__logo-wrap {
+      background-color: var(--theme-vue);
+    }
+  }
+
+  &--grunt {
+    background-color: var(--theme-grunt);
+
+    &__logo-wrap {
+      background-color: var(--theme-grunt);
+    }
+  }
 }
 
 @import 'helpers';

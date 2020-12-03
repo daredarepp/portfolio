@@ -353,35 +353,33 @@ progress {
   /* Legacy iOS */
 }
 :root {
-  /* colors */
-  --accent: #bf34bf;
-  --tech-color-transparency: 0.2;
-  --html: rgba(241, 101, 41, var(--tech-color-transparency));
-  --css: rgba(38, 77, 228, var(--tech-color-transparency));
-  --js: rgba(200, 186, 73, var(--tech-color-transparency));
-  --scss: rgba(205, 103, 153, var(--tech-color-transparency));
-  --vue: rgba(65, 184, 131, var(--tech-color-transparency));
-  --tailwind: rgba(29, 169, 187, var(--tech-color-transparency));
-  --git: rgba(240, 81, 51, var(--tech-color-transparency));
-  --grunt: rgba(251, 169, 25, var(--tech-color-transparency));
-  /* ui */
-  --body-bg: #f0f1f3;
-  --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
-  --body-text: #1a202c;
-  --body-text-alt: grey;
-  --card-bg: white;
-  --transition-duration: .2s;
-  --card-shadow: 0 4px 20px rgba(0,0,0,.05);
+  --theme-primary: #bf34bf;
+  --theme-bg: #f0f1f3;
+  --theme-on-bg: #1a202c;
+  --theme-on-bg--alt: #1a202c;
+  --theme-surface: white;
+  --tech-transparency: 0.2;
+  --theme-html: rgba(241, 101, 41, var(--tech-transparency));
+  --theme-css: rgba(38, 77, 228, var(--tech-transparency));
+  --theme-js: rgba(200, 186, 73, var(--tech-transparency));
+  --theme-scss: rgba(205, 103, 153, var(--tech-transparency));
+  --theme-vue: rgba(65, 184, 131, var(--tech-transparency));
+  --theme-tailwind: rgba(29, 169, 187, var(--tech-transparency));
+  --theme-git: rgba(240, 81, 51, var(--tech-transparency));
+  --theme-grunt: rgba(251, 169, 25, var(--tech-transparency));
+  --gradient-bg: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
+  --shadow: 0 0 20px 5px rgba(0,0,0,.1);
+  --transition: .2s;
   height: 100%;
 }
 
 :root[theme=dark] {
-  --body-bg: #020219;
-  --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
-  --body-text: white;
-  --body-text-alt: #b8b8b8;
-  --card-bg: #1e1e2d;
-  --card-shadow: none;
+  --theme-bg: #020219;
+  --theme-on-bg: white;
+  --theme-on-bg--alt: #b8b8b8;
+  --theme-surface: #1e1e2d;
+  --gradient-bg: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
+  --shadow: none;
 }
 :root[theme=dark] .profile__service {
   background-color: #262637;
@@ -396,11 +394,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 80px;
-  background-color: var(--body-bg);
-  background-image: var(--body-gradient);
-  color: var(--body-text);
+  background-color: var(--theme-bg);
+  background-image: var(--gradient-bg);
+  color: var(--theme-on-bg);
   font-family: "Montserrat", sans-serif;
-  transition: background-color var(--transition-duration), color var(--transition-duration);
+  transition-property: background-color, color;
+  transition-duration: var(--transition);
 }
 
 header {
@@ -465,14 +464,12 @@ p:first-child {
 }
 
 a {
-  color: var(--accent);
+  color: var(--theme-primary);
   text-decoration: none;
 }
 
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --body-bg: var(--bg-dark);
-    --body-text: var(--text-light);
   }
 } */
 /*!
@@ -2838,7 +2835,7 @@ html {
 
 .logo {
   font-size: 22px;
-  color: var(--body-text);
+  color: var(--theme-on-bg);
   font-weight: 600;
   text-decoration: none;
 }
@@ -2868,7 +2865,7 @@ html {
   height: 35px;
   font-size: 20px;
   font-weight: 600;
-  color: var(--accent);
+  color: orange;
   cursor: pointer;
   filter: grayscale(1);
 }
@@ -2921,18 +2918,20 @@ html {
   align-items: center;
   padding: 30px;
   text-align: center;
-  background-color: var(--card-bg);
-  box-shadow: var(--card-shadow);
+  background-color: var(--theme-surface);
+  box-shadow: var(--shadow);
   border-radius: 20px;
-  transition: background-color var(--transition-duration);
+  transition: background-color var(--transition);
 }
 .profile__avatar {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
   object-fit: cover;
   object-position: top;
-  transition: border var(--transition-duration);
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: inherit;
+  transition: border var(--transition);
 }
 .profile__position {
   position: relative;
@@ -2952,7 +2951,7 @@ html {
 .profile__loc {
   margin-top: 10px;
   font-size: 12px;
-  color: var(--body-text-alt);
+  color: var(--theme-on-bg--alt);
 }
 .profile__service {
   position: absolute;
@@ -2960,11 +2959,11 @@ html {
   align-items: center;
   padding: 10px 15px;
   font-size: 12px;
-  color: var(--body-text-alt);
-  background-color: var(--card-bg);
+  color: var(--theme-on-bg--alt);
+  background-color: var(--theme-surface);
   border-radius: 13px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: background-color var(--transition-duration);
+  transition: background-color var(--transition);
 }
 .profile__service--1 {
   top: -50px;
@@ -3007,47 +3006,17 @@ html {
 }
 
 .tech {
-  --hover-duration: .3s;
   position: relative;
   display: flex;
   align-items: center;
   padding: 15px 25px;
   text-transform: uppercase;
-  background-color: var(--card-bg);
+  background-color: var(--theme-surface);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: var(--card-shadow);
-  transition: background-color var(--transition-duration);
-  z-index: 0;
-}
-.tech::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 90px;
-  height: 90px;
-  transform: rotate(45deg);
-  transition: transform var(--hover-duration);
-  z-index: -1;
-}
-.tech--html::before {
-  background-color: var(--html);
-}
-.tech--css::before {
-  background-color: var(--css);
-}
-.tech--js::before {
-  background-color: var(--js);
-}
-.tech--scss::before {
-  background-color: var(--scss);
-}
-.tech--vue::before {
-  background-color: var(--vue);
-}
-.tech--grunt::before {
-  background-color: var(--grunt);
+  box-shadow: var(--shadow);
+  transition-property: background-color;
+  transition-duration: var(--transition);
 }
 .tech__logo-wrap {
   display: flex;
@@ -3059,49 +3028,51 @@ html {
   padding: 5px;
   border-radius: 50%;
 }
-.tech--html .tech__logo-wrap {
-  background-color: var(--html);
-}
-.tech--css .tech__logo-wrap {
-  background-color: var(--css);
-}
-.tech--js .tech__logo-wrap {
-  background-color: var(--js);
-}
-.tech--scss .tech__logo-wrap {
-  background-color: var(--scss);
-}
-.tech--vue .tech__logo-wrap {
-  background-color: var(--vue);
-}
-.tech--grunt .tech__logo-wrap {
-  background-color: var(--grunt);
-}
 .tech img {
   height: 70%;
 }
 .tech h3 {
   margin-left: 50px;
-  transition: transform var(--hover-duration);
 }
-.tech:hover::before {
-  transform: rotate(45deg) scale(1.5);
+.tech--html {
+  background-color: var(--theme-html);
 }
-.tech:hover h3 {
-  transform: translateX(30px);
+.tech--html__logo-wrap {
+  background-color: var(--theme-html);
 }
-
-.big-card {
-  background-color: white;
-  padding: 20px 30px;
+.tech--css {
+  background-color: var(--theme-css);
 }
-
-.txt-accent {
-  color: var(--accent);
+.tech--css__logo-wrap {
+  background-color: var(--theme-css);
+}
+.tech--js {
+  background-color: var(--theme-js);
+}
+.tech--js__logo-wrap {
+  background-color: var(--theme-js);
+}
+.tech--scss {
+  background-color: var(--theme-scss);
+}
+.tech--scss__logo-wrap {
+  background-color: var(--theme-scss);
+}
+.tech--vue {
+  background-color: var(--theme-vue);
+}
+.tech--vue__logo-wrap {
+  background-color: var(--theme-vue);
+}
+.tech--grunt {
+  background-color: var(--theme-grunt);
+}
+.tech--grunt__logo-wrap {
+  background-color: var(--theme-grunt);
 }
 
 .txt-alt {
-  color: var(--body-text-alt);
+  color: var(--theme-on-bg--alt);
 }
 
 .txt-center {

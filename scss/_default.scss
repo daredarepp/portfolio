@@ -1,41 +1,44 @@
 :root {
-  /* colors */
-  --accent: #bf34bf;
+  // custom properties
+  --theme-primary: #bf34bf;
 
-  // tech colors
-  --tech-color-transparency: 0.2;
-  --html: rgba(241, 101, 41, var(--tech-color-transparency));
-  --css:  rgba(38, 77, 228, var(--tech-color-transparency));
-  --js:  rgba(200, 186, 73, var(--tech-color-transparency));
-  --scss:  rgba(205, 103, 153, var(--tech-color-transparency));
-  --vue:  rgba(65, 184, 131, var(--tech-color-transparency));
-  --tailwind: rgba(29, 169, 187, var(--tech-color-transparency));
-  --git: rgba(240, 81, 51, var(--tech-color-transparency));
-  --grunt: rgba(251, 169, 25, var(--tech-color-transparency));
+  --theme-bg: #f0f1f3;
+  --theme-on-bg: #1a202c;
+  --theme-on-bg--alt: #1a202c;
+  --theme-surface: white;
+  
+  --tech-transparency: 0.2;
+  --theme-html: rgba(241, 101, 41, var(--tech-transparency));
+  --theme-css:  rgba(38, 77, 228, var(--tech-transparency));
+  --theme-js:  rgba(200, 186, 73, var(--tech-transparency));
+  --theme-scss:  rgba(205, 103, 153, var(--tech-transparency));
+  --theme-vue:  rgba(65, 184, 131, var(--tech-transparency));
+  --theme-tailwind: rgba(29, 169, 187, var(--tech-transparency));
+  --theme-git: rgba(240, 81, 51, var(--tech-transparency));
+  --theme-grunt: rgba(251, 169, 25, var(--tech-transparency));
+  
+  --gradient-bg: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
+  
+  --shadow: 0 0 20px 5px rgba(0,0,0,.1);
+  --transition: .2s;
 
-  /* ui */
-  --body-bg: #f0f1f3;
-  --body-gradient: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
-  --body-text: #1a202c;
-  --body-text-alt: grey;
-  --card-bg: white;
-  --transition-duration: .2s;
-  --card-shadow: 0 4px 20px rgba(0,0,0,.05);
-
-
+  // regular properties
   height: 100%;
 }
 
 :root[theme="dark"] {
-  --body-bg: #020219;
-  --body-gradient: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
-  // --body-gradient: linear-gradient(to bottom, rgba(191, 52, 191, 0.1), transparent 25%);
-  --body-text: white;
-  --body-text-alt: #b8b8b8;
-  --card-bg: #1e1e2d;
-  --card-shadow: none;
+  // custom properties
+  --theme-bg: #020219;
+  --theme-on-bg: white;
+  --theme-on-bg--alt: #b8b8b8;
+  --theme-surface: #1e1e2d;
 
-  
+  --gradient-bg: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
+
+  --shadow: none;
+
+
+  // regular properties
   .profile {
     &__service {
       background-color: #262637;
@@ -53,11 +56,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 80px;
-  background-color: var(--body-bg);
-  background-image: var(--body-gradient);
-  color: var(--body-text);
+  background-color: var(--theme-bg);
+  background-image: var(--gradient-bg);
+  color: var(--theme-on-bg);
   font-family: 'Montserrat', sans-serif;
-  transition: background-color var(--transition-duration), color var(--transition-duration);
+  transition-property: background-color, color;
+  transition-duration: var(--transition);
 }
 
 header {
@@ -123,14 +127,12 @@ p {
 p:first-child { margin-top: 0; }
 
 a {
-  color: var(--accent);
+  color: var(--theme-primary);
   text-decoration: none;
 }
 
 
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --body-bg: var(--bg-dark);
-    --body-text: var(--text-light);
   }
 } */
