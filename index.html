@@ -8,6 +8,8 @@
   <link rel="preload" href="./fonts/montserrat-v15-latin-500.woff2" as="font">
   <link rel="preload" href="./fonts/montserrat-v15-latin-600.woff2" as="font">
   <link rel="preload" href="./fonts/montserrat-v15-latin-700.woff2" as="font">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
   <script>
@@ -21,7 +23,7 @@
 <body>
   <header>
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="" class="logo">darko</a>
+      <a href="" class="logo">darko todoroski</a>
 
       <fieldset class="theme-picker js-theme-picker">  
         <legend>Theme</legend>
@@ -44,56 +46,56 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <div class="container d-flex flex-column align-items-center flex-xl-row align-items-xl-start">
-        <div class="hero__content">
+      <div class="container d-flex justify-content-between">
+        <div class="intro">
           <h1>
             <span>👋</span>
-            Hi,
-            <br class="d-sm-none">I'm Darko
+            Hi, I'm Darko
           </h1>
 
           <p>
-            I'm a <strong>Front-End Developer</strong> with 3 years of experience converting web designs to responsive web UIs.
-            <span class="d-inline d-xl-block">My passion is to build modern, performant and enjoyable user interfaces and learn from the process.</span>
+            I'm a <strong>Front-End Developer</strong> with 3 years of experience converting web designs to responsive websites.
+            <span class="d-block">My passion is to build modern, performant and enjoyable web applications, and to contantly improve.</span>
           </p>
 
-          <p>Get in touch:</p>
-          <a href="mailto:darkotodoroski@yahoo.com" class="mt-5">darkotodoroski@yahoo.com</a>
+          <p>
+            Get in touch:
+            <a href="mailto:darkotodoroski@yahoo.com" class="ml-10">darkotodoroski@yahoo.com</a>
+          </p>
         </div>
 
         <div class="profile-wrapper">
-          <div class="profile">
-            <img src="images/darko.png" alt="Darko Todoroski" class="profile__avatar" width="120" height="120">
-            <p class="profile__position">Front-End</p>
-            <p class="profile__name">Darko Todoroski</p>
-            <p class="profile__loc">Skopje, North Macedonia</p>
+          <div class="profile-card">
+            <img class="profile-card__avatar" src="images/darko.png" alt="Darko Todoroski" width="120" height="120">
+            <p class="profile-card__pos">Front-End</p>
+            <p class="profile-card__name">Darko Todoroski</p>
+            <p class="profile-card__loc">Skopje, North Macedonia</p>
   
             <!-- services -->
-            <div class="profile__service profile__service--1">
+            <div class="profile-card__service profile-card__service--1">
               <img src="images/icons/code.svg" width="20" height="20">
               Pixel perfect
             </div>
   
-            <div class="profile__service profile__service--2">
+            <div class="profile-card__service profile-card__service--2">
               <img src="images/icons/smartphone.svg" width="20" height="20">
               Responsive
             </div>
   
-            <div class="profile__service profile__service--3">
+            <div class="profile-card__service profile-card__service--3">
               <img src="images/icons/browser.svg" width="20" height="20">
               Cross-browser
             </div>
   
-            <div class="profile__service profile__service--4">
+            <div class="profile-card__service profile-card__service--4">
               <img src="images/icons/flash.svg" width="20" height="20">
               Performant
             </div>
   
             <!-- design apps -->
-            <img class="profile__app profile__app--1" src="images/logos/xd-logo.svg" width="40" height="40">
-            <img class="profile__app profile__app--2" src="images/logos/figma-logo2.svg" width="40" height="40">
+            <img class="profile-card__app profile-card__app--1" src="images/logos/xd-logo.svg" width="40" height="40">
+            <img class="profile-card__app profile-card__app--2" src="images/logos/figma-logo2.svg" width="40" height="40">
           </div>
-
         </div>
       </div>
     </section>
@@ -104,73 +106,49 @@
       <div class="container">
         <h2>Technologies I use</h2>
 
-        <div class="d-none">
-          <!-- slider controls -->
-          <svg
-            id="arrow-left"
-            class="arrow arrow--left"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
-            ></path>
-          </svg>
-          <svg
-            id="arrow-right"
-            class="arrow arrow--right"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"></path>
-          </svg>
-
-          <div id="dots" class="dots"></div>
-        </div>
-
         <div class="tech-wrapper">
-          <div class="tech tech--html">
-            <div class="tech__logo-wrap">
+          <div class="tech-card tech-card--html">
+            <div class="tech-card__logo-wrap">
               <img src="images/logos/html.svg" alt="logo">
             </div>
             
             <h3>html</h3>
           </div>
 
-          <div class="tech tech--css">
-            <div class="tech__logo-wrap">
+          <div class="tech-card tech-card--css">
+            <div class="tech-card__logo-wrap">
               <img src="images/logos/css.svg" alt="logo">
             </div>
             
             <h3>css</h3>
           </div>
 
-          <div class="tech tech--js">
-            <div class="tech__logo-wrap">
+          <div class="tech-card tech-card--js">
+            <div class="tech-card__logo-wrap">
               <img src="images/logos/js.svg" alt="logo">
             </div>
             
             <h3>js</h3>
           </div>
 
-          <div class="tech tech--scss">
-            <div class="tech__logo-wrap">
+          <div class="tech-card tech-card--scss">
+            <div class="tech-card__logo-wrap">
               <img src="images/logos/scss.svg" alt="logo">
             </div>
             
             <h3>scss</h3>
           </div>
 
-          <div class="tech tech--vue">
-            <div class="tech__logo-wrap">
+          <div class="tech-card tech-card--vue">
+            <div class="tech-card__logo-wrap">
               <img src="images/logos/vue.svg" alt="logo">
             </div>
             
             <h3>vue</h3>
           </div>
 
-          <div class="tech tech--grunt">
-            <div class="tech__logo-wrap">
+          <div class="tech-card tech-card--grunt">
+            <div class="tech-card__logo-wrap">
               <img src="images/logos/grunt.svg" alt="logo">
             </div>
             
@@ -185,7 +163,7 @@
     <div class="container">
       <div class="">
         <p>Darko Todoroski</p>
-        <p class="mt-0 txt-14 txt-alt lh-1">Front-End Developer</p>
+        <p class="mt-0">Front-End Developer</p>
         <a href="mailto:darkotodoroski@yahoo.com">darkotodoroski@yahoo.com</a>
       </div>
       

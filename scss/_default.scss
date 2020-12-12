@@ -1,10 +1,12 @@
 :root {
   // custom properties
-  --theme-primary: #bf34bf;
 
-  --theme-bg: #f0f1f3;
-  --theme-on-bg: #1a202c;
-  --theme-on-bg--alt: #1a202c;
+  // theme
+  --theme-primary: #AF48FF;
+
+  --theme-bg: #FBFBFC;
+  --theme-on-bg: #25323D;
+  --theme-on-bg--alt: #5D87A8;
   --theme-surface: white;
   
   --tech-transparency: 0.2;
@@ -17,10 +19,11 @@
   --theme-git: rgba(240, 81, 51, var(--tech-transparency));
   --theme-grunt: rgba(251, 169, 25, var(--tech-transparency));
   
-  --gradient-bg: linear-gradient(to bottom, rgba(128, 0, 128, 0.08), transparent 25%);
-  
-  --shadow: 0 0 20px 5px rgba(0,0,0,.1);
-  --transition: .2s;
+  // shadows
+  --shadow-surface: 0 40px 30px rgba(25, 25, 46, 0.04);
+
+  // transitions durations
+  --transition: .3s;
 
   // regular properties
   height: 100%;
@@ -33,14 +36,17 @@
   --theme-on-bg--alt: #b8b8b8;
   --theme-surface: #1e1e2d;
 
-  --gradient-bg: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);
   --gradient-surface: linear-gradient(45deg, #8000801c, #0000ff26);
 
-  --shadow: none;
+  --shadow-surface: none;
 
 
   // regular properties
-  .profile {
+  .hero {
+    // background-image: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);;
+  }
+
+  .profile-card {
     &__service {
       background-color: #262637;
     }
@@ -56,11 +62,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 80px;
   background-color: var(--theme-bg);
-  background-image: var(--gradient-bg);
   color: var(--theme-on-bg);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   transition-property: background-color, color;
   transition-duration: var(--transition);
 }
@@ -69,7 +73,7 @@ header {
   position: absolute;
   top: 0;
   width: 100%;
-  padding: 25px 0;
+  padding: 50px 0 20px;
   z-index: 1;
 }
 
@@ -78,8 +82,11 @@ main {
 }
 
 footer {
-  background-color: rgba(36, 36, 42, 0.05);
-  padding: 20px 0;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background-color: #E7EFF4;
+  font-size: .81rem;
+  font-weight: 300;
 
   a {
     display: inline-block;
@@ -88,8 +95,8 @@ footer {
 }
 
 section {
-  padding-top:    50px;
-  padding-bottom: 50px;
+  padding-top:    30px;
+  padding-bottom: 30px;
 }
 
 img {
@@ -98,7 +105,7 @@ img {
 }
 
 h1 {
-  font-size: 58px;
+  font-size: 3.13rem;
   line-height: 1;
   font-weight: 700;
 
@@ -123,6 +130,7 @@ p {
   margin: 0;
   margin-top: 20px;
   line-height: 1.6;
+  color: var(--theme-on-bg--alt);
 }
 
 p:first-child { margin-top: 0; }
