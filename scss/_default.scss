@@ -47,7 +47,7 @@ footer {
   padding-top: 30px;
   padding-bottom: 40px;
   background-color: #E7EFF4;
-  font-size: em(13px);
+  font-size: rem(13px);
   font-weight: 300;
 
   a {
@@ -70,21 +70,16 @@ h1 {
   font-size: rem(50px);
   line-height: 1;
   font-weight: 700;
-
-  // emoji
-  span {
-    font-size: 50px;
-  }
 }
 
 h2 {
-  font-size: 24px;
+  font-size: rem(24px);
   line-height: 1;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: rem(16px);
   font-weight: 500;
 }
 

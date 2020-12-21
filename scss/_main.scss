@@ -81,13 +81,13 @@
   font-size: rem(15px);
 }
 
-.profile-wrapper {
+.profile-widget-wrapper {
   width: 100%;
   max-width: 515px;
   padding: 100px 130px;
 }
 
-.profile-card {
+.profile-widget {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -130,37 +130,39 @@
     color: var(--theme-on-bg--alt);
   }
 
-  &__service {
+  &__feature {
     position: absolute;
     display: flex;
     align-items: center;
     padding: 16px 24px;
+    font-size: rem(15px);
     color: var(--theme-on-bg--alt);
     background-color: var(--theme-surface);
     border-radius: 16px;
     box-shadow: inherit;
 
 
-    &--1 {
-      top: -100px;
+    &--pix {
+      top: -85px;
       left: -50px;
     }
 
-    &--2 {
-      top: 50%;
+    &--res {
+      top: 40%;
       left: -135px;
     }
 
-    &--3 {
-      top: 60%;
-      right: -110px;
+    &--cb {
+      top: 55%;
+      right: -150px;
     }
 
-    &--4 {
-      bottom: -50px;
+    &--perf {
+      bottom: -80px;
       right: -30px;
     }
 
+    // icon
     img {
       margin-right: 5px;
     }
@@ -168,16 +170,24 @@
 
   &__app {
     position: absolute;
+    display: flex;
+    width: 61px;
+    height: 61px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
     box-shadow: inherit;
 
-    &--1 {
-      top: 30px;
-      right: -25px;
+    &--xd {
+      top: 25px;
+      right: -40px;
+      background-color: #F4EEFB;
     }
 
-    &--2 {
-      bottom: -25px;
-      left: 30px;
+    &--figma {
+      bottom: -40px;
+      left: 15px;
+      background-color: #ebf7fb;
     }
   }
 }
