@@ -1,0 +1,36 @@
+:root {
+  // theme
+  --theme-primary: #AF48FF;
+
+  --theme-bg: #FBFBFC;
+  --theme-on-bg: #25323D;
+  --theme-on-bg--alt: #5D87A8;
+  --theme-surface: white;
+  
+  --tech-transparency: 0.2;
+  --theme-html: rgba(241, 101, 41, var(--tech-transparency));
+  --theme-css:  rgba(38, 77, 228, var(--tech-transparency));
+  --theme-js:  rgba(200, 186, 73, var(--tech-transparency));
+  --theme-scss:  rgba(205, 103, 153, var(--tech-transparency));
+  --theme-vue:  rgba(65, 184, 131, var(--tech-transparency));
+  --theme-tailwind: rgba(29, 169, 187, var(--tech-transparency));
+  --theme-git: rgba(240, 81, 51, var(--tech-transparency));
+  --theme-grunt: rgba(251, 169, 25, var(--tech-transparency));
+  
+  // shadows
+  --shadow-surface: 0 40px 30px rgba(25, 25, 46, 0.04);
+
+  // transition durations
+  --transition: .3s;
+}
+
+:root[theme="dark"] {
+  --theme-bg: #020219;
+  --theme-on-bg: white;
+  --theme-on-bg--alt: #b8b8b8;
+  --theme-surface: #1e1e2d;
+
+  --gradient-surface: linear-gradient(45deg, #8000801c, #0000ff26);
+
+  --shadow-surface: none;
+}

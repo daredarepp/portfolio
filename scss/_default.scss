@@ -1,47 +1,8 @@
 :root {
-  // custom properties
-
-  // theme
-  --theme-primary: #AF48FF;
-
-  --theme-bg: #FBFBFC;
-  --theme-on-bg: #25323D;
-  --theme-on-bg--alt: #5D87A8;
-  --theme-surface: white;
-  
-  --tech-transparency: 0.2;
-  --theme-html: rgba(241, 101, 41, var(--tech-transparency));
-  --theme-css:  rgba(38, 77, 228, var(--tech-transparency));
-  --theme-js:  rgba(200, 186, 73, var(--tech-transparency));
-  --theme-scss:  rgba(205, 103, 153, var(--tech-transparency));
-  --theme-vue:  rgba(65, 184, 131, var(--tech-transparency));
-  --theme-tailwind: rgba(29, 169, 187, var(--tech-transparency));
-  --theme-git: rgba(240, 81, 51, var(--tech-transparency));
-  --theme-grunt: rgba(251, 169, 25, var(--tech-transparency));
-  
-  // shadows
-  --shadow-surface: 0 40px 30px rgba(25, 25, 46, 0.04);
-
-  // transitions durations
-  --transition: .3s;
-
-  // regular properties
   height: 100%;
 }
 
 :root[theme="dark"] {
-  // custom properties
-  --theme-bg: #020219;
-  --theme-on-bg: white;
-  --theme-on-bg--alt: #b8b8b8;
-  --theme-surface: #1e1e2d;
-
-  --gradient-surface: linear-gradient(45deg, #8000801c, #0000ff26);
-
-  --shadow-surface: none;
-
-
-  // regular properties
   .hero {
     // background-image: linear-gradient(to bottom, rgba(0, 0, 255, 0.1), transparent 25%);;
   }
@@ -64,6 +25,7 @@ body {
   justify-content: space-between;
   background-color: var(--theme-bg);
   color: var(--theme-on-bg);
+  font-size: $browser-context;
   font-family: 'Poppins', sans-serif;
   transition-property: background-color, color;
   transition-duration: var(--transition);
@@ -85,7 +47,7 @@ footer {
   padding-top: 30px;
   padding-bottom: 40px;
   background-color: #E7EFF4;
-  font-size: .81rem;
+  font-size: em(13px);
   font-weight: 300;
 
   a {
@@ -105,7 +67,7 @@ img {
 }
 
 h1 {
-  font-size: 3.13rem;
+  font-size: rem(50px);
   line-height: 1;
   font-weight: 700;
 

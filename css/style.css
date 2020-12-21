@@ -343,7 +343,6 @@ progress {
   --theme-grunt: rgba(251, 169, 25, var(--tech-transparency));
   --shadow-surface: 0 40px 30px rgba(25, 25, 46, 0.04);
   --transition: .3s;
-  height: 100%;
 }
 
 :root[theme=dark] {
@@ -354,6 +353,11 @@ progress {
   --gradient-surface: linear-gradient(45deg, #8000801c, #0000ff26);
   --shadow-surface: none;
 }
+
+:root {
+  height: 100%;
+}
+
 :root[theme=dark] .profile-card__service {
   background-color: #262637;
 }
@@ -368,6 +372,7 @@ body {
   justify-content: space-between;
   background-color: var(--theme-bg);
   color: var(--theme-on-bg);
+  font-size: 16px;
   font-family: "Poppins", sans-serif;
   transition-property: background-color, color;
   transition-duration: var(--transition);
@@ -389,7 +394,7 @@ footer {
   padding-top: 30px;
   padding-bottom: 40px;
   background-color: #E7EFF4;
-  font-size: 0.81rem;
+  font-size: em(13px);
   font-weight: 300;
 }
 footer a {
@@ -408,7 +413,7 @@ img {
 }
 
 h1 {
-  font-size: 3.13rem;
+  font-size: 3.125rem;
   line-height: 1;
   font-weight: 700;
 }
@@ -511,22 +516,20 @@ a {
 
 .hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding-top: 160px;
-  padding-bottom: 110px;
+  padding-top: 120px;
   background-image: linear-gradient(180deg, rgba(175, 72, 255, 0.06) 0%, transparent 100%);
 }
 
 .intro {
   max-width: 480px;
   flex-shrink: 0;
-  font-size: 0.94rem;
+  font-size: 0.9375rem;
 }
 
 .profile-wrapper {
   width: 100%;
-  max-width: 245px;
+  max-width: 515px;
+  padding: 100px 130px;
 }
 
 .profile-card {
@@ -579,8 +582,8 @@ a {
   box-shadow: inherit;
 }
 .profile-card__service--1 {
-  top: -50px;
-  left: -80px;
+  top: -100px;
+  left: -50px;
 }
 .profile-card__service--2 {
   top: 50%;
@@ -700,6 +703,10 @@ a {
   font-size: 50px !important;
 }
 
+.txt-20 {
+  font-size: 20px !important;
+}
+
 .txt-14 {
   font-size: 14px !important;
 }
@@ -734,6 +741,10 @@ a {
 
 .p-absolute {
   position: absolute !important;
+}
+
+.va-middle {
+  vertical-align: middle !important;
 }
 
 .d-none {
