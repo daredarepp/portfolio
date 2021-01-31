@@ -34,37 +34,23 @@
   justify-content: center;
   align-items: center;
   width: 40px;
-  height: 35px;
+  height: 40px;
+  margin: 0 2px;
   font-size: 20px;
   font-weight: 600;
   color: orange;
-  cursor: pointer;
   filter: grayscale(1);
+  border-radius: 50%;
+  cursor: pointer;
   
   img {
     display: block;
   }
 
-  // dot
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    width: 5px;
-    height: 5px;
-    background-color: orange;
-    border-radius: 50%;
-    opacity: 0;
-  }
-
   // active state
   .theme-option:checked + & {
     filter: none;
-
-    // dot
-    &::after {
-      opacity: 1;
-    }
+    background-color: rgba(0,0,0,.05);
   }
 }
 
@@ -83,13 +69,15 @@
 
 .profile-widget-wrapper {
   width: 100%;
-  max-width: 515px;
-  padding: 100px 130px;
+  padding: 90px 135px;
 }
 
 .profile-widget {
   position: relative;
   display: flex;
+  float: right;
+  width: 100%;
+  max-width: 245px; /* continue here, how would this behave responsively to determine how to size it */
   flex-direction: column;
   align-items: center;
   padding: 35px 25px 25px;
@@ -121,12 +109,13 @@
   &__name {
     margin-top: 15px;
     font-weight: 700;
+    color: var(--theme-on-bg);
     line-height: 1;
   }
 
   &__loc {
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--theme-on-bg--alt);
   }
 
@@ -195,9 +184,8 @@
 .tech-wrapper {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 40px;
 }
 
 .tech-card {
@@ -206,24 +194,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 145px;
+  min-height: 135px;
   padding: 15px 25px;
-  color: white;
   text-transform: uppercase;
   background-color: var(--theme-surface);
   border-radius: 14px;
+  box-shadow: var(--shadow-surface);
   overflow: hidden;
-  // box-shadow: var(--shadow-surface);
 
   &__logo-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     padding: 14px;
-    border-radius: 50%;
+    border-radius: 6px;
   }
 
   // logo
@@ -233,10 +220,5 @@
 
   h3 {
     margin-top: 10px;
-  }
-
-  // colors
-  &--html {
-    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
   }
 }

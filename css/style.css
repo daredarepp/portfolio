@@ -332,7 +332,7 @@ progress {
   --theme-on-bg: #25323D;
   --theme-on-bg--alt: #5D87A8;
   --theme-surface: white;
-  --tech-transparency: 0.2;
+  --tech-transparency: 0.1;
   --theme-html: rgba(241, 101, 41, var(--tech-transparency));
   --theme-css: rgba(38, 77, 228, var(--tech-transparency));
   --theme-js: rgba(200, 186, 73, var(--tech-transparency));
@@ -358,8 +358,14 @@ progress {
   height: 100%;
 }
 
-:root[theme=dark] .profile-card__service {
+:root[theme=dark] .profile-widget__feature {
   background-color: #262637;
+}
+:root[theme=dark] .profile-widget__app--xd {
+  background-color: #410488;
+}
+:root[theme=dark] .profile-widget__app--figma {
+  background-color: #033c4f;
 }
 :root[theme=dark] footer {
   background-color: rgba(36, 36, 42, 0.4);
@@ -386,13 +392,9 @@ header {
   z-index: 1;
 }
 
-main {
-  overflow: hidden;
-}
-
 footer {
-  padding-top: 30px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 30px;
   background-color: #E7EFF4;
   font-size: 0.8125rem;
   font-weight: 300;
@@ -403,8 +405,8 @@ footer a {
 }
 
 section {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 img {
@@ -484,31 +486,21 @@ a {
   justify-content: center;
   align-items: center;
   width: 40px;
-  height: 35px;
+  height: 40px;
+  margin: 0 2px;
   font-size: 20px;
   font-weight: 600;
   color: orange;
-  cursor: pointer;
   filter: grayscale(1);
+  border-radius: 50%;
+  cursor: pointer;
 }
 .theme-label img {
   display: block;
 }
-.theme-label::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  width: 5px;
-  height: 5px;
-  background-color: orange;
-  border-radius: 50%;
-  opacity: 0;
-}
 .theme-option:checked + .theme-label {
   filter: none;
-}
-.theme-option:checked + .theme-label::after {
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .hero {
@@ -525,13 +517,16 @@ a {
 
 .profile-widget-wrapper {
   width: 100%;
-  max-width: 515px;
-  padding: 100px 130px;
+  padding: 90px 135px;
 }
 
 .profile-widget {
   position: relative;
   display: flex;
+  float: right;
+  width: 100%;
+  max-width: 245px;
+  /* continue here, how would this behave responsively to determine how to size it */
   flex-direction: column;
   align-items: center;
   padding: 35px 25px 25px;
@@ -561,11 +556,12 @@ a {
 .profile-widget__name {
   margin-top: 15px;
   font-weight: 700;
+  color: var(--theme-on-bg);
   line-height: 1;
 }
 .profile-widget__loc {
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--theme-on-bg--alt);
 }
 .profile-widget__feature {
@@ -622,9 +618,8 @@ a {
 .tech-wrapper {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 40px;
 }
 
 .tech-card {
@@ -633,12 +628,12 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 145px;
+  min-height: 135px;
   padding: 15px 25px;
-  color: white;
   text-transform: uppercase;
   background-color: var(--theme-surface);
   border-radius: 14px;
+  box-shadow: var(--shadow-surface);
   overflow: hidden;
 }
 .tech-card__logo-wrap {
@@ -646,19 +641,16 @@ a {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   padding: 14px;
-  border-radius: 50%;
+  border-radius: 6px;
 }
 .tech-card img {
   height: 100%;
 }
 .tech-card h3 {
   margin-top: 10px;
-}
-.tech-card--html {
-  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 }
 
 .txt-alt {
@@ -706,15 +698,15 @@ a {
 }
 
 .txt-50 {
-  font-size: 50px !important;
+  font-size: 3.125rem !important;
 }
 
 .txt-20 {
-  font-size: 20px !important;
+  font-size: 1.25rem !important;
 }
 
 .txt-14 {
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
 }
 
 .lh-1 {
