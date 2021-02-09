@@ -31,7 +31,6 @@ body {
   justify-content: space-between;
   background-color: var(--theme-bg);
   color: var(--theme-on-bg);
-  font-size: $browser-context;
   font-family: 'Poppins', sans-serif;
   transition-property: background-color, color;
   transition-duration: var(--transition);
@@ -72,6 +71,10 @@ h1 {
   font-size: rem(50px);
   line-height: 1;
   font-weight: 700;
+
+  img {
+    vertical-align: sub;
+  }
 }
 
 h2 {

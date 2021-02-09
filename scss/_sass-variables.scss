@@ -1,6 +1,6 @@
-$browser-context: 16px;
+$browser-default: 16px;
 
-@function rem($pixels, $context: $browser-context) {
+@function rem($pixels, $context: $browser-default) {
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;
   }

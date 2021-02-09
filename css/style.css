@@ -378,7 +378,6 @@ body {
   justify-content: space-between;
   background-color: var(--theme-bg);
   color: var(--theme-on-bg);
-  font-size: 16px;
   font-family: "Poppins", sans-serif;
   transition-property: background-color, color;
   transition-duration: var(--transition);
@@ -418,6 +417,9 @@ h1 {
   font-size: 3.125rem;
   line-height: 1;
   font-weight: 700;
+}
+h1 img {
+  vertical-align: sub;
 }
 
 h2 {
@@ -619,7 +621,7 @@ a {
   position: relative;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 40px;
+  grid-gap: 30px;
 }
 
 .tech-card {
@@ -632,7 +634,6 @@ a {
   padding: 15px 25px;
   text-transform: uppercase;
   background-color: var(--theme-surface);
-  border-radius: 14px;
   box-shadow: var(--shadow-surface);
   overflow: hidden;
 }
@@ -651,6 +652,32 @@ a {
 }
 .tech-card h3 {
   margin-top: 10px;
+}
+
+.projects-wrapper {
+  display: grid;
+  margin-top: 25px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.project-card {
+  position: relative;
+  min-height: 135px;
+  background-color: var(--theme-surface);
+  box-shadow: var(--shadow-surface);
+  overflow: hidden;
+}
+.project-card__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+}
+.project-card__content {
+  position: relative;
+  padding: 24px;
+  z-index: 1;
 }
 
 .txt-alt {
