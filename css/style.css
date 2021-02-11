@@ -312,19 +312,30 @@ progress {
   cursor: default;
 }
 
+/* poppins-300 - latin */
+/* poppins-regular - latin */
 @font-face {
-  font-family: "Circular Std Book";
-  src: url("../fonts/circular-std-book/860c3ec7bbc5da3e97233ccecafe512e.eot");
-  /* IE9*/
-  src: url("../fonts/circular-std-book/860c3ec7bbc5da3e97233ccecafe512e.eot?#iefix") format("embedded-opentype"), url("../fonts/circular-std-book/860c3ec7bbc5da3e97233ccecafe512e.woff2") format("woff2"), url("../fonts/circular-std-book/860c3ec7bbc5da3e97233ccecafe512e.woff") format("woff"), url("../fonts/circular-std-book/860c3ec7bbc5da3e97233ccecafe512e.ttf") format("truetype"), url("../fonts/circular-std-book/860c3ec7bbc5da3e97233ccecafe512e.svg#Circular Std Book") format("svg");
-  /* iOS 4.1- */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/poppins-v15-latin-regular.woff2") format("woff2"), url("../fonts/poppins-v15-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* poppins-600 - latin */
 @font-face {
-  font-family: "Circular Std Bold";
-  src: url("961a181da27e7cbc072ec2fb5bbfe2a9.eot");
-  /* IE9*/
-  src: url("961a181da27e7cbc072ec2fb5bbfe2a9.eot?#iefix") format("embedded-opentype"), url("961a181da27e7cbc072ec2fb5bbfe2a9.woff2") format("woff2"), url("961a181da27e7cbc072ec2fb5bbfe2a9.woff") format("woff"), url("961a181da27e7cbc072ec2fb5bbfe2a9.ttf") format("truetype"), url("961a181da27e7cbc072ec2fb5bbfe2a9.svg#Circular Std Bold") format("svg");
-  /* iOS 4.1- */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/poppins-v15-latin-600.woff2") format("woff2"), url("../fonts/poppins-v15-latin-600.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* poppins-700 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/poppins-v15-latin-700.woff2") format("woff2"), url("../fonts/poppins-v15-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 :root {
   --theme-primary: #AF48FF;
@@ -332,15 +343,15 @@ progress {
   --theme-on-bg: #25323D;
   --theme-on-bg--alt: #5D87A8;
   --theme-surface: white;
-  --tech-transparency: 0.1;
+  /* --tech-transparency: 0.1;
   --theme-html: rgba(241, 101, 41, var(--tech-transparency));
-  --theme-css: rgba(38, 77, 228, var(--tech-transparency));
-  --theme-js: rgba(200, 186, 73, var(--tech-transparency));
-  --theme-scss: rgba(205, 103, 153, var(--tech-transparency));
-  --theme-vue: rgba(65, 184, 131, var(--tech-transparency));
+  --theme-css:  rgba(38, 77, 228, var(--tech-transparency));
+  --theme-js:  rgba(200, 186, 73, var(--tech-transparency));
+  --theme-scss:  rgba(205, 103, 153, var(--tech-transparency));
+  --theme-vue:  rgba(65, 184, 131, var(--tech-transparency));
   --theme-tailwind: rgba(29, 169, 187, var(--tech-transparency));
   --theme-git: rgba(240, 81, 51, var(--tech-transparency));
-  --theme-grunt: rgba(251, 169, 25, var(--tech-transparency));
+  --theme-grunt: rgba(251, 169, 25, var(--tech-transparency)); */
   --shadow-surface: 0 40px 30px rgba(25, 25, 46, 0.04);
   --transition: .3s;
 }
@@ -350,7 +361,6 @@ progress {
   --theme-on-bg: white;
   --theme-on-bg--alt: #b8b8b8;
   --theme-surface: #1e1e2d;
-  --gradient-surface: linear-gradient(45deg, #8000801c, #0000ff26);
   --shadow-surface: none;
 }
 

@@ -34,6 +34,4 @@ window.addEventListener("load", function loadHandler() {
       document.documentElement.removeAttribute('theme');
     }
   }
-
-  // twemoji.parse(document.body);
 });
