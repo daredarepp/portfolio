@@ -133,11 +133,6 @@
 
 @media (max-width: 400px) {
   h1 {
-    font-size: 52px;
-
-    // emoji
-    span {
-      font-size: 44px;
-    }
+    font-size: rem(52px);
   }
 }

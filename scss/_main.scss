@@ -6,7 +6,7 @@
 }
 
 .logo {
-  font-size: 20px;
+  font-size: rem(20px);
   color: var(--theme-on-bg);
   font-weight: 600;
 }
@@ -36,7 +36,7 @@
   width: 40px;
   height: 40px;
   margin: 0 2px;
-  font-size: 20px;
+  font-size: rem(20px);
   font-weight: 600;
   color: orange;
   filter: grayscale(1);
@@ -99,7 +99,7 @@
     position: relative;
     margin-top: -15px;
     padding: 5px 10px;
-    font-size: 11px;
+    font-size: rem(11px);
     font-weight: 700;
     color: white;
     background-image: linear-gradient(135deg, #FF26B2 0%, #851BD9 64.06%, #3F0FFF 100%);;
@@ -115,7 +115,7 @@
 
   &__loc {
     margin-top: 5px;
-    font-size: 13px;
+    font-size: rem(13px);
     color: var(--theme-on-bg--alt);
   }
 
