@@ -20,6 +20,10 @@
 }
 
 @media (max-width: 991px) {
+  .d-md-none {
+    display: none;
+  }
+
   .align-items-md-start {
     align-items: flex-start !important;
   }
@@ -41,7 +45,7 @@
   }
   
   .profile {
-    margin: 100px auto 0;
+    margin: 120px auto 0;
   }
 }
 

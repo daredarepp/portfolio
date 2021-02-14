@@ -384,6 +384,10 @@ progress {
   height: 100%;
 }
 
+:root[theme=dark] .theme-option:checked + .theme-label {
+  filter: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 :root[theme=dark] .profile-bubble {
   background-color: #262637;
 }
@@ -527,8 +531,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   margin: 0 2px;
   font-size: 1.25rem;
   font-weight: 600;
@@ -972,6 +976,10 @@ footer {
   }
 }
 @media (max-width: 991px) {
+  .d-md-none {
+    display: none;
+  }
+
   .align-items-md-start {
     align-items: flex-start !important;
   }
@@ -993,7 +1001,7 @@ footer {
   }
 
   .profile {
-    margin: 100px auto 0;
+    margin: 120px auto 0;
   }
 }
 @media (max-width: 800px) {
