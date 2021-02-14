@@ -669,6 +669,7 @@ footer {
   box-shadow: var(--shadow-surface);
 }
 .card__text {
+  margin-top: 15px;
   font-size: 0.875rem;
 }
 
@@ -1036,7 +1037,7 @@ footer {
   }
 
   .profile {
-    margin-top: 140px;
+    margin-top: 160px;
   }
 
   .profile-bubble--1 {
@@ -1060,7 +1061,7 @@ footer {
 
   .profile-app--2 {
     bottom: 20px;
-    left: -50px;
+    left: -40px;
   }
 
   .cards-wrapper {

@@ -188,6 +188,7 @@
   box-shadow: var(--shadow-surface);
 
   &__text {
+    margin-top: 15px;
     font-size: rem(14px);
   }
 }
