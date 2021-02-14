@@ -1,14 +1,15 @@
 .container {
   width: 100%;
-  max-width: 1130px;
-  padding: 0 30px;
+  max-width: 1190px;
+  padding: 0 60px;
   margin: 0 auto;
 }
 
 .logo {
   font-size: rem(20px);
-  color: var(--theme-on-bg);
+  color: var(--theme-primary);
   font-weight: 600;
+  text-decoration: underline;
 }
 
 .theme-picker {
@@ -56,28 +57,21 @@
 
 
 .hero {
-  position: relative;
-  padding-top: 120px;
+  padding: 200px 0 110px;
   background-image: linear-gradient(180deg, rgba(175, 72, 255, .06) 0%, transparent 100%);
 }
 
 .intro {
   max-width: 480px;
   flex-shrink: 0;
-  font-size: rem(15px);
 }
 
-.profile-widget-wrapper {
-  width: 100%;
-  padding: 90px 135px;
-}
-
-.profile-widget {
+.profile {
   position: relative;
   display: flex;
-  float: right;
   width: 100%;
-  max-width: 245px; /* continue here, how would this behave responsively to determine how to size it */
+  max-width: 245px;
+  margin-right: 130px;
   flex-direction: column;
   align-items: center;
   padding: 35px 25px 25px;
@@ -95,7 +89,7 @@
     box-shadow: inherit;
   }
 
-  &__pos {
+  &__job {
     position: relative;
     margin-top: -15px;
     padding: 5px 10px;
@@ -118,134 +112,82 @@
     font-size: rem(13px);
     color: var(--theme-on-bg--alt);
   }
+}
 
-  &__feature {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    padding: 16px 24px;
-    font-size: rem(15px);
-    color: var(--theme-on-bg--alt);
-    background-color: var(--theme-surface);
-    border-radius: 16px;
-    box-shadow: inherit;
+.profile-bubble {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: rem(15px);
+  color: var(--theme-on-bg--alt);
+  background-color: var(--theme-surface);
+  border-radius: 16px;
+  box-shadow: inherit;
 
-
-    &--pix {
-      top: -85px;
-      left: -50px;
-    }
-
-    &--res {
-      top: 40%;
-      left: -135px;
-    }
-
-    &--cb {
-      top: 55%;
-      right: -150px;
-    }
-
-    &--perf {
-      bottom: -80px;
-      right: -30px;
-    }
-
-    // icon
-    img {
-      margin-right: 5px;
-    }
+  &--1 {
+    top: -75px;
+    left: -50px;
   }
 
-  &__app {
-    position: absolute;
-    display: flex;
-    width: 61px;
-    height: 61px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    box-shadow: inherit;
+  &--2 {
+    top: 85px;
+    left: -135px;
+  }
 
-    &--xd {
-      top: 25px;
-      right: -40px;
-      background-color: #F4EEFB;
-    }
+  &--3 {
+    top: 120px;
+    right: -123px;
+  }
 
-    &--figma {
-      bottom: -40px;
-      left: 15px;
-      background-color: #ebf7fb;
-    }
+  &--4 {
+    bottom: -80px;
+    right: -30px;
+  }
+
+  // icon
+  &__icon {
+    margin-right: 10px;
   }
 }
 
-.tech-wrapper {
-  position: relative;
+.profile-app {
+  position: absolute;
+  display: flex;
+  width: 61px;
+  height: 61px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: inherit;
+
+  &--1 {
+    top: 25px;
+    right: -40px;
+    background-color: #F4EEFB;
+  }
+
+  &--2 {
+    bottom: -40px;
+    left: 15px;
+    background-color: #ebf7fb;
+  }
+}
+
+.cards-wrapper {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  margin-top: 35px;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
 
-.tech-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 135px;
-  padding: 15px 25px;
-  text-transform: uppercase;
+.card {
+  padding: 20px;
   background-color: var(--theme-surface);
+  border-radius: 6px;
   box-shadow: var(--shadow-surface);
-  overflow: hidden;
 
-  &__logo-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: 55px;
-    height: 55px;
-    padding: 14px;
-    border-radius: 6px;
-  }
-
-  // logo
-  img {
-    height: 100%;
-  }
-
-  h3 {
-    margin-top: 10px;
-  }
-}
-
-.projects-wrapper {
-  display: grid;
-  margin-top: 25px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px
-}
-
-.project-card {
-  position: relative;
-  min-height: 135px;
-  background-color: var(--theme-surface);
-  box-shadow: var(--shadow-surface);
-  overflow: hidden;
-  
-  &__img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-  }
-  
-  &__content {
-    position: relative;
-    padding: 24px;
-    z-index: 1;
+  &__text {
+    font-size: rem(14px);
   }
 }

@@ -3,7 +3,7 @@
 }
 
 :root[theme="dark"] {
-  .profile-widget {
+  .profile {
     &__feature {
       background-color: #262637;
     }
@@ -44,22 +44,9 @@ header {
   z-index: 1;
 }
 
-footer {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  background-color: #E7EFF4;
-  font-size: rem(13px);
-  font-weight: 300;
-
-  a {
-    display: inline-block;
-    margin-top: 10px;
-  }
-}
-
 section {
-  padding-top:    40px;
-  padding-bottom: 40px;
+  padding-top:    30px;
+  padding-bottom: 30px;
 }
 
 img {
@@ -71,35 +58,63 @@ h1 {
   font-size: rem(50px);
   line-height: 1;
   font-weight: 700;
-
-  img {
-    vertical-align: sub;
-  }
 }
 
 h2 {
-  font-size: rem(24px);
+  position: relative;
+  font-size: rem(20px);
   line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
+
+  // line
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, rgba(192, 192, 192, 0.63), transparent 60%);
+    background: linear-gradient(to right, #8e4fbe, transparent 60%);
+    left: 150px;
+  }
 }
 
 h3 {
   font-size: rem(16px);
+  line-height: 1.4;
   font-weight: 500;
 }
 
 p {
   margin: 0;
   margin-top: 20px;
+  font-size: rem(16px);
   line-height: 1.6;
   color: var(--theme-on-bg--alt);
+
+  footer & {
+    font-size: rem(13px);
+    font-weight: 300;
+  }
 }
 
 p:first-child { margin-top: 0; }
 
 a {
+  font-size: rem(16px);
   color: var(--theme-primary);
   text-decoration: none;
+
+  footer & {
+    font-size: rem(13px);
+    font-weight: 300;
+  }
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #E7EFF4;
+  margin-top: 30px;
 }
 
 

@@ -313,12 +313,27 @@ progress {
 }
 
 /* poppins-300 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url("../fonts/poppins-v15-latin-300.woff2") format("woff2"), url("../fonts/poppins-v15-latin-300.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 /* poppins-regular - latin */
 @font-face {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   src: local(""), url("../fonts/poppins-v15-latin-regular.woff2") format("woff2"), url("../fonts/poppins-v15-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* poppins-500 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/poppins-v15-latin-500.woff2") format("woff2"), url("../fonts/poppins-v15-latin-500.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* poppins-600 - latin */
@@ -357,6 +372,7 @@ progress {
 }
 
 :root[theme=dark] {
+  --theme-primary: #c376ff;
   --theme-bg: #020219;
   --theme-on-bg: white;
   --theme-on-bg--alt: #b8b8b8;
@@ -368,13 +384,13 @@ progress {
   height: 100%;
 }
 
-:root[theme=dark] .profile-widget__feature {
+:root[theme=dark] .profile__feature {
   background-color: #262637;
 }
-:root[theme=dark] .profile-widget__app--xd {
+:root[theme=dark] .profile__app--xd {
   background-color: #410488;
 }
-:root[theme=dark] .profile-widget__app--figma {
+:root[theme=dark] .profile__app--figma {
   background-color: #033c4f;
 }
 :root[theme=dark] footer {
@@ -401,21 +417,9 @@ header {
   z-index: 1;
 }
 
-footer {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  background-color: #E7EFF4;
-  font-size: 0.8125rem;
-  font-weight: 300;
-}
-footer a {
-  display: inline-block;
-  margin-top: 10px;
-}
-
 section {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 img {
@@ -428,26 +432,40 @@ h1 {
   line-height: 1;
   font-weight: 700;
 }
-h1 img {
-  vertical-align: sub;
-}
 
 h2 {
-  font-size: 1.5rem;
+  position: relative;
+  font-size: 1.25rem;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, rgba(192, 192, 192, 0.63), transparent 60%);
+  background: linear-gradient(to right, #8e4fbe, transparent 60%);
+  left: 150px;
 }
 
 h3 {
   font-size: 1rem;
+  line-height: 1.4;
   font-weight: 500;
 }
 
 p {
   margin: 0;
   margin-top: 20px;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--theme-on-bg--alt);
+}
+footer p {
+  font-size: 0.8125rem;
+  font-weight: 300;
 }
 
 p:first-child {
@@ -455,8 +473,19 @@ p:first-child {
 }
 
 a {
+  font-size: 1rem;
   color: var(--theme-primary);
   text-decoration: none;
+}
+footer a {
+  font-size: 0.8125rem;
+  font-weight: 300;
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #E7EFF4;
+  margin-top: 30px;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -465,15 +494,16 @@ a {
 } */
 .container {
   width: 100%;
-  max-width: 1130px;
-  padding: 0 30px;
+  max-width: 1190px;
+  padding: 0 60px;
   margin: 0 auto;
 }
 
 .logo {
   font-size: 1.25rem;
-  color: var(--theme-on-bg);
+  color: var(--theme-primary);
   font-weight: 600;
+  text-decoration: underline;
 }
 
 .theme-picker {
@@ -516,29 +546,21 @@ a {
 }
 
 .hero {
-  position: relative;
-  padding-top: 120px;
+  padding: 200px 0 110px;
   background-image: linear-gradient(180deg, rgba(175, 72, 255, 0.06) 0%, transparent 100%);
 }
 
 .intro {
   max-width: 480px;
   flex-shrink: 0;
-  font-size: 0.9375rem;
 }
 
-.profile-widget-wrapper {
-  width: 100%;
-  padding: 90px 135px;
-}
-
-.profile-widget {
+.profile {
   position: relative;
   display: flex;
-  float: right;
   width: 100%;
   max-width: 245px;
-  /* continue here, how would this behave responsively to determine how to size it */
+  margin-right: 130px;
   flex-direction: column;
   align-items: center;
   padding: 35px 25px 25px;
@@ -547,7 +569,7 @@ a {
   box-shadow: var(--shadow-surface);
   border-radius: 13px;
 }
-.profile-widget__avatar {
+.profile__avatar {
   width: 90px;
   height: 90px;
   object-fit: cover;
@@ -555,7 +577,7 @@ a {
   border-radius: 50%;
   box-shadow: inherit;
 }
-.profile-widget__pos {
+.profile__job {
   position: relative;
   margin-top: -15px;
   padding: 5px 10px;
@@ -565,18 +587,19 @@ a {
   background-image: linear-gradient(135deg, #FF26B2 0%, #851BD9 64.06%, #3F0FFF 100%);
   border-radius: 40px;
 }
-.profile-widget__name {
+.profile__name {
   margin-top: 15px;
   font-weight: 700;
   color: var(--theme-on-bg);
   line-height: 1;
 }
-.profile-widget__loc {
+.profile__loc {
   margin-top: 5px;
   font-size: 0.8125rem;
   color: var(--theme-on-bg--alt);
 }
-.profile-widget__feature {
+
+.profile-bubble {
   position: absolute;
   display: flex;
   align-items: center;
@@ -587,26 +610,27 @@ a {
   border-radius: 16px;
   box-shadow: inherit;
 }
-.profile-widget__feature--pix {
-  top: -85px;
+.profile-bubble--1 {
+  top: -75px;
   left: -50px;
 }
-.profile-widget__feature--res {
-  top: 40%;
+.profile-bubble--2 {
+  top: 85px;
   left: -135px;
 }
-.profile-widget__feature--cb {
-  top: 55%;
-  right: -150px;
+.profile-bubble--3 {
+  top: 120px;
+  right: -123px;
 }
-.profile-widget__feature--perf {
+.profile-bubble--4 {
   bottom: -80px;
   right: -30px;
 }
-.profile-widget__feature img {
-  margin-right: 5px;
+.profile-bubble__icon {
+  margin-right: 10px;
 }
-.profile-widget__app {
+
+.profile-app {
   position: absolute;
   display: flex;
   width: 61px;
@@ -616,78 +640,32 @@ a {
   border-radius: 25px;
   box-shadow: inherit;
 }
-.profile-widget__app--xd {
+.profile-app--1 {
   top: 25px;
   right: -40px;
   background-color: #F4EEFB;
 }
-.profile-widget__app--figma {
+.profile-app--2 {
   bottom: -40px;
   left: 15px;
   background-color: #ebf7fb;
 }
 
-.tech-wrapper {
-  position: relative;
+.cards-wrapper {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 30px;
-}
-
-.tech-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 135px;
-  padding: 15px 25px;
-  text-transform: uppercase;
-  background-color: var(--theme-surface);
-  box-shadow: var(--shadow-surface);
-  overflow: hidden;
-}
-.tech-card__logo-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  width: 55px;
-  height: 55px;
-  padding: 14px;
-  border-radius: 6px;
-}
-.tech-card img {
-  height: 100%;
-}
-.tech-card h3 {
-  margin-top: 10px;
-}
-
-.projects-wrapper {
-  display: grid;
-  margin-top: 25px;
+  margin-top: 35px;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
 
-.project-card {
-  position: relative;
-  min-height: 135px;
+.card {
+  padding: 20px;
   background-color: var(--theme-surface);
+  border-radius: 6px;
   box-shadow: var(--shadow-surface);
-  overflow: hidden;
 }
-.project-card__img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60%;
-}
-.project-card__content {
-  position: relative;
-  padding: 24px;
-  z-index: 1;
+.card__text {
+  font-size: 0.875rem;
 }
 
 .txt-alt {
@@ -764,6 +742,10 @@ a {
 
 .mt-20 {
   margin-top: 20px !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
 }
 
 .ml-10 {
@@ -972,120 +954,106 @@ a {
   align-self: stretch !important;
 }
 
-@media (max-width: 1199px) {
-  body {
-    padding-top: 70px;
-  }
-
-  header {
-    padding: 20px 0;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  .container {
-    max-width: 800px;
-  }
-
-  .hero {
-    padding-top: 50px;
-  }
-  .hero__content {
-    text-align: center;
-  }
-
-  .profile-wrapper {
-    margin-top: 40px;
-    margin-right: 0;
-    padding-top: 50px;
-    justify-content: center;
+@media (max-width: 1100px) {
+  .intro {
+    max-width: 420px;
   }
 
   .profile {
-    max-height: initial;
+    max-width: 230px;
+    margin-right: 100px;
   }
 
-  .tech-wrapper {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  .profile-bubble--2 {
+    left: -115px;
   }
-}
-@media (max-width: 991px) {
-  .hero {
-    padding-top: 20px;
-    padding-bottom: 50px;
-  }
-}
-@media (max-width: 700px) {
-  .profile__service--1 {
-    left: -60px;
-  }
-  .profile__service--2 {
-    left: -100px;
-  }
-  .profile__service--3 {
+  .profile-bubble--3 {
     right: -100px;
   }
 }
-@media (max-width: 575px) {
-  section {
-    padding-top: 30px;
-    padding-bottom: 30px;
+@media (max-width: 991px) {
+  .align-items-md-start {
+    align-items: flex-start !important;
+  }
+
+  .flex-md-column {
+    flex-direction: column;
   }
 
   .container {
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: 780px;
   }
 
-  .profile-wrapper {
-    padding-top: 80px;
-    padding-bottom: 40px;
+  .hero {
+    padding-top: 150px;
   }
 
-  .profile__service--1 {
-    top: -80px;
-    left: 30%;
-  }
-  .profile__service--2 {
-    top: -30px;
-    left: 20px;
-  }
-  .profile__service--3 {
-    top: auto;
-    right: 20px;
-    bottom: -30px;
-  }
-  .profile__service--4 {
-    bottom: -80px;
-    right: 30%;
-  }
-  .profile__app--1 {
-    top: -15px;
-    right: 40px;
-  }
-  .profile__app--2 {
-    bottom: -15px;
-    left: 40px;
+  .intro {
+    max-width: 100%;
   }
 
-  .tech-wrapper {
-    grid-gap: 15px;
-    margin-top: 30px;
+  .profile {
+    margin: 100px auto 0;
+  }
+}
+@media (max-width: 800px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 575px) {
+  header {
+    padding-top: 20px;
   }
 
   footer {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 10px;
   }
-}
-@media (max-width: 400px) {
+
   h1 {
-    font-size: 3.25rem;
+    font-size: 2.875rem;
+  }
+
+  .container {
+    max-width: 480px;
+    padding: 0 25px;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .profile {
+    margin-top: 130px;
+  }
+
+  .profile-bubble--1 {
+    top: -115px;
+    left: 70px;
+  }
+  .profile-bubble--2 {
+    top: -40px;
+    left: -40px;
+  }
+  .profile-bubble--3 {
+    top: auto;
+    right: -30px;
+    bottom: -40px;
+  }
+  .profile-bubble--4 {
+    bottom: -80px;
+    right: auto;
+    left: 0;
+  }
+
+  .profile-app--2 {
+    bottom: 20px;
+    left: -50px;
+  }
+
+  .cards-wrapper {
+    margin-top: 30px;
+    grid-gap: 25px;
   }
 }
 

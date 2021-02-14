@@ -1,138 +1,115 @@
-@media (max-width: 1199px) {
-  body {
-    padding-top: 70px;
-  }
-
-  header {
-    padding: 20px 0;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  .container {
-    max-width: 800px;
-  }
-
-  .hero {
-    padding-top: 50px;
-
-    &__content {
-      text-align: center;
-    }
-  }
-
-  .profile-wrapper {
-    margin-top: 40px;
-    margin-right: 0;
-    padding-top: 50px;
-    justify-content: center;
+@media (max-width: 1100px) {
+  .intro {
+    max-width: 420px;
   }
 
   .profile {
-    max-height: initial;
+    max-width: 230px;
+    margin-right: 100px;
   }
 
-  .tech-wrapper {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  .profile-bubble {
+    &--2 {
+      left: -115px;
+    }
+
+    &--3 {
+      right: -100px;
+    }
   }
 }
 
 @media (max-width: 991px) {
+  .align-items-md-start {
+    align-items: flex-start !important;
+  }
+
+  .flex-md-column {
+    flex-direction: column;
+  }
+
+  .container {
+    max-width: 780px;
+  }
+
   .hero {
-    padding-top: 20px;
-    padding-bottom: 50px;
+    padding-top: 150px;
+  }
+
+  .intro {
+    max-width: 100%;
+  }
+  
+  .profile {
+    margin: 100px auto 0;
   }
 }
 
-@media (max-width: 700px) {
-  .profile {
-    &__service {
-      &--1 {
-        left: -60px;
-      }
-
-      &--2 {
-        left: -100px;
-      }
-
-      &--3 {
-        right: -100px;
-      }
-    }
+@media (max-width: 800px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 575px) {
-  section {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .profile-wrapper {
-    padding-top: 80px;
-    padding-bottom: 40px;
-  }
-
-  .profile {
-    &__service {
-      &--1 {
-        top: -80px;
-        left: 30%;
-      }
-
-      &--2 {
-        top: -30px;
-        left: 20px;
-      }
-
-      &--3 {
-        top: auto;
-        right: 20px;
-        bottom: -30px;
-      }
-
-      &--4 {
-        bottom: -80px;
-        right: 30%;
-      }
-    }
-
-    &__app {
-      &--1 {
-        top: -15px;
-        right: 40px;
-      }
-
-      &--2 {
-        bottom: -15px;
-        left: 40px;
-      }
-    }
-  }
-
-  .tech-wrapper {
-    grid-gap: 15px;
-    margin-top: 30px;
+  header {
+    padding-top: 20px;
   }
 
   footer {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 10px;
   }
-}
 
-@media (max-width: 400px) {
   h1 {
-    font-size: rem(52px);
+    font-size: rem(46px);
+  }
+
+  .container {
+    max-width: 480px;
+    padding: 0 25px;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
+
+  .profile {
+    margin-top: 130px;
+  }
+  
+  .profile-bubble {
+    &--1 {
+      top: -115px;
+      left: 70px;
+    }
+
+    &--2 {
+      top: -40px;
+      left: -40px;
+    }
+
+    &--3 {
+      top: auto;
+      right: -30px;
+      bottom: -40px;
+    }
+
+    &--4 {
+      bottom: -80px;
+      right: auto;
+      left: 0;
+    }
+  }
+
+  .profile-app {
+    &--2 {
+      bottom: 20px;
+      left: -50px;
+    }
+  }
+
+  .cards-wrapper {
+    margin-top: 30px;
+    grid-gap: 25px;
   }
 }

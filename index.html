@@ -8,8 +8,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="./fonts/poppins-v15-latin-300.woff" as="font" crossorigin>
+  <link rel="preload" href="./fonts/poppins-v15-latin-300.woff2" as="font" crossorigin>
   <link rel="preload" href="./fonts/poppins-v15-latin-regular.woff" as="font" crossorigin>
   <link rel="preload" href="./fonts/poppins-v15-latin-regular.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/poppins-v15-latin-500.woff" as="font" crossorigin>
+  <link rel="preload" href="./fonts/poppins-v15-latin-500.woff2" as="font" crossorigin>
   <link rel="preload" href="./fonts/poppins-v15-latin-600.woff" as="font" crossorigin>
   <link rel="preload" href="./fonts/poppins-v15-latin-600.woff2" as="font" crossorigin>
   <link rel="preload" href="./fonts/poppins-v15-latin-700.woff" as="font" crossorigin>
@@ -27,7 +31,7 @@
 <body>
   <header>
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="" class="logo">Darko Todoroski</a>
+      <a href="" class="logo">darko.to</a>
 
       <fieldset class="theme-picker js-theme-picker">  
         <legend>Theme</legend>
@@ -42,7 +46,7 @@
         <input type="radio" id="theme-system" name="theme" value="system" class="theme-option">
         <label for="theme-system" class="theme-label">A</label>
         <!-- “Notify by email, grouping, on radio button, checked, one of two”. -->
-      </fieldset>  
+      </fieldset>
     </div>
   </header>
 
@@ -50,139 +54,99 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <div class="container d-flex justify-content-between align-items-center">
+      <div class="container d-flex justify-content-between align-items-center flex-md-column align-items-md-start">
         <div class="intro">
-          <h1>
-            <img src="images/hand.png" alt="Hand wave" width="60" height="60">
-            Hi, I'm Darko
-          </h1>
+          <h1>Hi, I'm Darko</h1>
 
           <p>
-            I'm a <strong>Front-End Developer</strong> with 3 years of experience converting web designs to responsive and pixel perfect web UIs.
+            I'm an experienced <strong>Front-End Developer</strong> dedicated to building modern and enjoyable UIs on the web.
           </p>
 
           <p>Get in touch:</p>
-
-          <a href="mailto:darkotodoroski@yahoo.com">📧 darkotodoroski@yahoo.com</a>
+          <a href="mailto:mail@darko.to">mail@darko.to</a>
           <br/>
-          <a href="https://www.linkedin.com/in/darko-todoroski-8b2735166/" target="_blank" rel="noopener">🙂 LinkedIn</a>
+          <a href="https://www.linkedin.com/in/darko-todoroski-8b2735166/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
 
-        <div class="profile-widget-wrapper">
-          <div class="profile-widget">
-            <img class="profile-widget__avatar" src="images/darko.png" alt="Darko Todoroski" width="120" height="120">
-            <p class="profile-widget__pos">Front-End</p>
-            <p class="profile-widget__name">Darko Todoroski</p>
-            <p class="profile-widget__loc">Skopje, North Macedonia</p>
-  
-            <!-- services -->
-            <div class="profile-widget__feature profile-widget__feature--pix">
-              <img src="images/icons/code.svg" width="20" height="20">
-              Pixel perfect
-            </div>
-  
-            <div class="profile-widget__feature profile-widget__feature--res">
-              <img src="images/icons/smartphone.svg" width="20" height="20">
-              Responsive
-            </div>
-  
-            <div class="profile-widget__feature profile-widget__feature--cb">
-              <img src="images/icons/browser.svg" width="20" height="20">
-              Cross-browser
-            </div>
-  
-            <div class="profile-widget__feature profile-widget__feature--perf">
-              <img src="images/icons/flash.svg" width="20" height="20">
-              Performant
-            </div>
-  
-            <!-- design apps -->
-            <div class="profile-widget__app profile-widget__app--xd">
-              <img src="images/logos/xd-logo-sm.svg" width="24" height="16">
-            </div>
+        <div class="profile">
+          <img class="profile__avatar" src="images/darko.png" alt="Darko Todoroski" width="120" height="120">
+          <p class="profile__job">Front-End</p>
+          <p class="profile__name">Darko Todoroski</p>
+          <p class="profile__loc">Skopje, North Macedonia</p>
 
-            <div class="profile-widget__app profile-widget__app--figma">
-              <img src="images/logos/figma-logo-sm.svg" width="16" height="24">
-            </div>
+          <!-- skills -->
+          <div class="profile-bubble profile-bubble--1">
+            <img class="profile-bubble__icon" src="images/logos/html.svg" width="20" height="20">
+            HTML
+          </div>
+
+          <div class="profile-bubble profile-bubble--2">
+            <img class="profile-bubble__icon" src="images/logos/scss.svg" width="20" height="20">
+            CSS/SCSS
+          </div>
+
+          <div class="profile-bubble profile-bubble--3">
+            <img class="profile-bubble__icon" src="images/logos/js.svg" width="20" height="20">
+            JS
+          </div>
+
+          <div class="profile-bubble profile-bubble--4">
+            <img class="profile-bubble__icon" src="images/logos/vue.svg" width="20" height="20">
+            Vue.js
+          </div>
+
+          <!-- apps -->
+          <div class="profile-app profile-app--1">
+            <img src="images/logos/xd-logo-sm.svg" width="24" height="16">
+          </div>
+
+          <div class="profile-app profile-app--2">
+            <img src="images/logos/figma-logo-sm.svg" width="16" height="24">
           </div>
         </div>
       </div>
     </section>
-
-
-    <!-- Technologies -->
-    <!-- <section>
-      <div class="container">
-
-        <div class="tech-wrapper">
-          <div class="tech-card tech-card--html">
-            <div class="tech-card__logo-wrap">
-              <img src="images/logos/html.svg" alt="logo">
-            </div>
-            
-            <h3>html</h3>
-          </div>
-
-          <div class="tech-card tech-card--css">
-            <div class="tech-card__logo-wrap">
-              <img src="images/logos/css.svg" alt="logo">
-            </div>
-            
-            <h3>css</h3>
-          </div>
-
-          <div class="tech-card tech-card--js">
-            <div class="tech-card__logo-wrap">
-              <img src="images/logos/js.svg" alt="logo">
-            </div>
-            
-            <h3>js</h3>
-          </div>
-
-          <div class="tech-card tech-card--scss">
-            <div class="tech-card__logo-wrap">
-              <img src="images/logos/scss.svg" alt="logo">
-            </div>
-            
-            <h3>scss</h3>
-          </div>
-
-          <div class="tech-card tech-card--vue">
-            <div class="tech-card__logo-wrap">
-              <img src="images/logos/vue.svg" alt="logo">
-            </div>
-            
-            <h3>vue</h3>
-          </div>
-
-          <div class="tech-card tech-card--grunt">
-            <div class="tech-card__logo-wrap">
-              <img src="images/logos/grunt.svg" alt="logo">
-            </div>
-            
-            <h3>grunt</h3>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
 
     <!-- What I Do -->
     <section>
       <div class="container">
         <h2>What I do</h2>
-        <div class="skill-card">
+
+        <div class="cards-wrapper">
+          <div class="card">
+            <h3>1. Turn design into code</h3>
+
+            <p class="card__text">I convert Figma, XD, Photoshop designs into fully functional HTML+CSS+JS code.</p>
+          </div>
+
+          <div class="card">
+            <h3>2. Cross-device optimisations</h3>
+
+            <p class="card__text">I make sure the UI looks good on different browsers and screen sizes, from desktop to mobile.</p>
+            <!-- <p>All screen sizes, desktop to mobile. <br/> All browsers, even older ones.</p> -->
+          </div>
+
+          <div class="card">
+            <h3>3. Performance optimisations</h3>
+
+            <p class="card__text">From fast load times, to visual stability, to smooth animations, I make sure the UI performs well.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+
   <footer>
-    <div class="container d-flex justify-content-between align-items-center">
+    <div class="container d-flex justify-content-between">
       <div class="">
-        <p>Darko Todoroski</p>
-        <p class="mt-0">Front-End Developer</p>
-        <a href="mailto:darkotodoroski@yahoo.com">darkotodoroski@yahoo.com</a>
+        <p>
+          Darko Todoroski
+          <br/>
+          Front-End Developer
+        </p>
+        <a class="d-inline-block mt-10" href="mailto:mail@darko.to">mail@darko.to</a>
       </div>
       
       <a href="https://www.figma.com/community/file/852293192478512728" target="_blank" rel="noopener">Design inspiration</a>
