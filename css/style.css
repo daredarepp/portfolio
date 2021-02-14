@@ -384,13 +384,13 @@ progress {
   height: 100%;
 }
 
-:root[theme=dark] .profile__feature {
+:root[theme=dark] .profile-bubble {
   background-color: #262637;
 }
-:root[theme=dark] .profile__app--xd {
+:root[theme=dark] .profile-app--1 {
   background-color: #410488;
 }
-:root[theme=dark] .profile__app--figma {
+:root[theme=dark] .profile-app--2 {
   background-color: #033c4f;
 }
 :root[theme=dark] footer {
@@ -1014,6 +1014,10 @@ footer {
     font-size: 2.875rem;
   }
 
+  h2::after {
+    left: 130px;
+  }
+
   .container {
     max-width: 480px;
     padding: 0 25px;
@@ -1024,7 +1028,7 @@ footer {
   }
 
   .profile {
-    margin-top: 130px;
+    margin-top: 140px;
   }
 
   .profile-bubble--1 {

@@ -64,6 +64,11 @@
     font-size: rem(46px);
   }
 
+  // line
+  h2::after {
+    left: 130px;
+  }
+
   .container {
     max-width: 480px;
     padding: 0 25px;
@@ -74,7 +79,7 @@
   }
 
   .profile {
-    margin-top: 130px;
+    margin-top: 140px;
   }
   
   .profile-bubble {

@@ -3,19 +3,17 @@
 }
 
 :root[theme="dark"] {
-  .profile {
-    &__feature {
-      background-color: #262637;
+  .profile-bubble {
+    background-color: #262637;
+  }
+
+  .profile-app {
+    &--1 {
+      background-color: #410488;
     }
 
-    &__app {
-      &--xd {
-        background-color: #410488;
-      }
-
-      &--figma {
-        background-color: #033c4f;
-      }
+    &--2 {
+      background-color: #033c4f;
     }
   }
 
