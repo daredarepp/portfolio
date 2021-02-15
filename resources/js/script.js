@@ -1,3 +1,11 @@
+/* window.addEventListener('load', function() {
+    const str = 'dare';
+    const myFn = () => {
+        console.log(`${str} is a beastss23`);
+    }
+    myFn();
+}) */
+
 window.addEventListener("load", function loadHandler() {
   const themePicker = document.querySelector('.js-theme-picker');
   const mediaQueryDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');

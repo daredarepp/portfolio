@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An experienced Front-End Developer passionate about building performant and enjoyable user experiences on the web.">
   <title>Darko - Front-End Developer</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="preload" href="./fonts/poppins-v15-latin-300.woff" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-300.woff2" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-regular.woff" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-regular.woff2" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-500.woff" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-500.woff2" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-600.woff" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-600.woff2" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-700.woff" as="font" crossorigin>
-  <link rel="preload" href="./fonts/poppins-v15-latin-700.woff2" as="font" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-300.woff" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-300.woff2" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-regular.woff" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-regular.woff2" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-500.woff" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-500.woff2" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-600.woff" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-600.woff2" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-700.woff" as="font" crossorigin>
+  <link rel="preload" href="public/fonts/poppins-v15-latin-700.woff2" as="font" crossorigin>
+  <link rel="stylesheet" href="public/css/style.css">
+  <script src="public/js/script.js" defer></script>
   <script>
     // Turn on dark mode here to avoid brief light flash
     let savedTheme = localStorage.theme;
@@ -37,11 +38,11 @@
         <legend>Theme</legend>
         <input type="radio" id="theme-light" name="theme" value="light" class="theme-option">
         <label for="theme-light" class="theme-label" title="Light Theme">
-          <img src="images/icons/sun.svg" width="23" height="23" alt="sun">
+          <img src="public/images/icons/sun.svg" width="23" height="23" alt="sun">
         </label>
         <input type="radio" id="theme-dark" name="theme" value="dark" class="theme-option">
         <label for="theme-dark" class="theme-label" title="Dark Theme">
-          <img src="images/icons/moon.svg" width="23" height="23" alt="moon">
+          <img src="public/images/icons/moon.svg" width="23" height="23" alt="moon">
         </label>
         <input type="radio" id="theme-system" name="theme" value="system" class="theme-option">
         <label for="theme-system" class="theme-label" title="System Theme">A</label>
@@ -65,39 +66,39 @@
         </div>
 
         <div class="profile">
-          <img class="profile__avatar" src="images/darko.png" alt="Darko Todoroski" width="120" height="120">
+          <img class="profile__avatar" src="public/images/darko.png" alt="Darko Todoroski" width="120" height="120">
           <p class="profile__job">Front-End</p>
           <p class="profile__name">Darko Todoroski</p>
           <p class="profile__loc">Skopje, North Macedonia</p>
 
           <!-- skills -->
           <div class="profile-bubble profile-bubble--1">
-            <img class="profile-bubble__icon" src="images/logos/html.svg" width="20" height="20">
+            <img class="profile-bubble__icon" src="public/images/logos/html.svg" alt="html" width="20" height="20">
             HTML
           </div>
 
           <div class="profile-bubble profile-bubble--2">
-            <img class="profile-bubble__icon" src="images/logos/scss.svg" width="20" height="20">
+            <img class="profile-bubble__icon" src="public/images/logos/scss.svg" alt="scss" width="20" height="20">
             CSS/SCSS
           </div>
 
           <div class="profile-bubble profile-bubble--3">
-            <img class="profile-bubble__icon" src="images/logos/js.svg" width="20" height="20">
+            <img class="profile-bubble__icon" src="public/images/logos/js.svg" alt="js" width="20" height="20">
             JS
           </div>
 
           <div class="profile-bubble profile-bubble--4">
-            <img class="profile-bubble__icon" src="images/logos/vue.svg" width="20" height="20">
+            <img class="profile-bubble__icon" src="public/images/logos/vue.svg" alt="vue.js" width="20" height="20">
             Vue.js
           </div>
 
           <!-- apps -->
           <div class="profile-app profile-app--1">
-            <img src="images/logos/xd-logo-sm.svg" width="24" height="16">
+            <img src="public/images/logos/xd-logo-sm.svg" alt="adobe xd" width="24" height="16">
           </div>
 
           <div class="profile-app profile-app--2">
-            <img src="images/logos/figma-logo-sm.svg" width="16" height="24">
+            <img src="public/images/logos/figma-logo-sm.svg" alt="figma" width="16" height="24">
           </div>
         </div>
       </div>
