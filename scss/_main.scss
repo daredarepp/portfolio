@@ -15,6 +15,7 @@
 .theme-picker {
   display: flex;
   flex-shrink: 0;
+  flex-direction: row;
   border: none;
 
   legend {
