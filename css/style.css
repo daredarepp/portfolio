@@ -1007,6 +1007,10 @@ footer {
   }
 }
 @media (max-width: 575px) {
+  :root {
+    --transition: 0s;
+  }
+
   header {
     padding-top: 20px;
   }
