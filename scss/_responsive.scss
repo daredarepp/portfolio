@@ -50,16 +50,17 @@
 }
 
 @media (max-width: 800px) {
+  // No transitions on smaller devices
+  :root {
+    --transition: 0s;
+  }
+
   .cards-wrapper {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 575px) {
-  :root {
-    --transition: 0s;
-  }
-  
   header {
     padding-top: 20px;
   }
