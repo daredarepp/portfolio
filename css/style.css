@@ -358,15 +358,6 @@ progress {
   --theme-on-bg: #25323D;
   --theme-on-bg--alt: #5D87A8;
   --theme-surface: white;
-  /* --tech-transparency: 0.1;
-  --theme-html: rgba(241, 101, 41, var(--tech-transparency));
-  --theme-css:  rgba(38, 77, 228, var(--tech-transparency));
-  --theme-js:  rgba(200, 186, 73, var(--tech-transparency));
-  --theme-scss:  rgba(205, 103, 153, var(--tech-transparency));
-  --theme-vue:  rgba(65, 184, 131, var(--tech-transparency));
-  --theme-tailwind: rgba(29, 169, 187, var(--tech-transparency));
-  --theme-git: rgba(240, 81, 51, var(--tech-transparency));
-  --theme-grunt: rgba(251, 169, 25, var(--tech-transparency)); */
   --shadow-surface: 0 40px 30px rgba(25, 25, 46, 0.04);
   --transition: .3s;
 }
@@ -466,6 +457,7 @@ p {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--theme-on-bg--alt);
+  transition: color var(--transition);
 }
 footer p {
   font-size: 0.8125rem;
@@ -480,6 +472,7 @@ a {
   font-size: 1rem;
   color: var(--theme-primary);
   text-decoration: none;
+  transition: color var(--transition);
 }
 footer a {
   font-size: 0.8125rem;
@@ -490,12 +483,9 @@ footer {
   padding: 20px 0;
   background-color: #E7EFF4;
   margin-top: 30px;
+  transition: background-color var(--transition);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-  }
-} */
 .container {
   width: 100%;
   max-width: 1190px;
@@ -512,6 +502,7 @@ footer {
 
 .theme-picker {
   display: flex;
+  flex-shrink: 0;
   border: none;
 }
 .theme-picker legend {
@@ -572,6 +563,7 @@ footer {
   background-color: var(--theme-surface);
   box-shadow: var(--shadow-surface);
   border-radius: 13px;
+  transition: background-color var(--transition);
 }
 .profile__avatar {
   width: 90px;
@@ -600,7 +592,6 @@ footer {
 .profile__loc {
   margin-top: 5px;
   font-size: 0.8125rem;
-  color: var(--theme-on-bg--alt);
 }
 
 .profile-bubble {
@@ -613,6 +604,8 @@ footer {
   background-color: var(--theme-surface);
   border-radius: 16px;
   box-shadow: inherit;
+  transition-property: background-color, color;
+  transition-duration: var(--transition);
 }
 .profile-bubble--1 {
   top: -75px;
@@ -643,6 +636,7 @@ footer {
   align-items: center;
   border-radius: 25px;
   box-shadow: inherit;
+  transition: inherit;
 }
 .profile-app--1 {
   top: 25px;
@@ -665,8 +659,9 @@ footer {
 .card {
   padding: 20px;
   background-color: var(--theme-surface);
-  border-radius: 6px;
+  border-radius: 13px;
   box-shadow: var(--shadow-surface);
+  transition: background-color var(--transition);
 }
 .card__text {
   margin-top: 15px;

@@ -14,6 +14,7 @@
 
 .theme-picker {
   display: flex;
+  flex-shrink: 0;
   border: none;
 
   legend {
@@ -79,6 +80,7 @@
   background-color: var(--theme-surface);
   box-shadow: var(--shadow-surface);
   border-radius: 13px;
+  transition: background-color var(--transition);
 
   &__avatar {
     width: 90px;
@@ -110,7 +112,6 @@
   &__loc {
     margin-top: 5px;
     font-size: rem(13px);
-    color: var(--theme-on-bg--alt);
   }
 }
 
@@ -124,6 +125,8 @@
   background-color: var(--theme-surface);
   border-radius: 16px;
   box-shadow: inherit;
+  transition-property: background-color, color;
+  transition-duration: var(--transition);
 
   &--1 {
     top: -75px;
@@ -160,6 +163,7 @@
   align-items: center;
   border-radius: 25px;
   box-shadow: inherit;
+  transition: inherit;
 
   &--1 {
     top: 25px;
@@ -184,8 +188,9 @@
 .card {
   padding: 20px;
   background-color: var(--theme-surface);
-  border-radius: 6px;
+  border-radius: 13px;
   box-shadow: var(--shadow-surface);
+  transition: background-color var(--transition);
 
   &__text {
     margin-top: 15px;
