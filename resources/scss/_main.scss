@@ -13,9 +13,9 @@
 }
 
 .theme-picker {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  min-width: 117px;
-  flex-shrink: 0;
   border: none;
 
   legend {

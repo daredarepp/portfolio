@@ -513,9 +513,9 @@ footer {
 }
 
 .theme-picker {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    min-width: 117px;
-    flex-shrink: 0;
     border: none;
 }
 
@@ -809,6 +809,8 @@ footer {
 }
 
 .d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
     display: flex !important;
 }
 
